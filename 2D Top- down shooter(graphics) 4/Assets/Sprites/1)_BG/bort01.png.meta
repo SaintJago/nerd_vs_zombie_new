@@ -1,0 +1,1273 @@
+fileFormatVersion: 2
+guid: 011fbe3ff2dc28d4f9c9527c94e2bdaf
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 577469031159892278
+    second: bort01_0
+  - first:
+      213: -1881645492933636717
+    second: bort01_1
+  - first:
+      213: -4361977470624854787
+    second: bort01_2
+  - first:
+      213: 1867428553374098441
+    second: bort01_3
+  - first:
+      213: 5939246833200556115
+    second: bort01_4
+  - first:
+      213: -7672015821000178986
+    second: bort01_5
+  - first:
+      213: -7550755097441191855
+    second: bort01_6
+  - first:
+      213: 139560281755772434
+    second: bort01_7
+  - first:
+      213: -9071804834951734564
+    second: bort01_8
+  - first:
+      213: -7491886792843689745
+    second: bort01_9
+  - first:
+      213: -3954041731586071752
+    second: bort01_10
+  - first:
+      213: 9065728856564034240
+    second: bort01_11
+  - first:
+      213: 321456471933356983
+    second: bort01_12
+  - first:
+      213: -2317729641854001637
+    second: bort01_13
+  - first:
+      213: -1801847548725328676
+    second: bort01_14
+  - first:
+      213: 6244155076772015566
+    second: bort01_15
+  - first:
+      213: -1605675415995005378
+    second: bort01_16
+  - first:
+      213: -1364554477282961430
+    second: bort01_17
+  - first:
+      213: 1658174604653824305
+    second: bort01_18
+  - first:
+      213: 2399870252229964965
+    second: bort01_19
+  - first:
+      213: -6678209533120752532
+    second: bort01_20
+  - first:
+      213: -7456484355266739716
+    second: bort01_21
+  - first:
+      213: 7326554915286107357
+    second: bort01_22
+  - first:
+      213: 4284521594306253661
+    second: bort01_23
+  - first:
+      213: -2524705882868612909
+    second: bort01_24
+  - first:
+      213: -7144562851477801358
+    second: bort01_25
+  - first:
+      213: 6961417165407391739
+    second: bort01_26
+  - first:
+      213: -6359490212211503798
+    second: bort01_27
+  - first:
+      213: -2994054464471058644
+    second: bort01_28
+  - first:
+      213: -1654313375893742636
+    second: bort01_29
+  - first:
+      213: -2538142730134160326
+    second: bort01_30
+  - first:
+      213: 2374366550571756276
+    second: bort01_31
+  - first:
+      213: 2944521642455631244
+    second: bort01_32
+  - first:
+      213: -5028052521688904087
+    second: bort01_33
+  - first:
+      213: -3435281498444029927
+    second: bort01_34
+  - first:
+      213: -8960466262508118125
+    second: bort01_35
+  - first:
+      213: 5562744876262691510
+    second: bort01_36
+  - first:
+      213: -193699598655452263
+    second: bort01_37
+  - first:
+      213: -6129215272971082909
+    second: bort01_38
+  - first:
+      213: 245407472043887329
+    second: bort01_39
+  - first:
+      213: 2415879624885244958
+    second: bort01_40
+  - first:
+      213: -4758892414944477633
+    second: bort01_41
+  - first:
+      213: 4822730233604316731
+    second: bort01_42
+  - first:
+      213: 2046323133325307558
+    second: bort01_43
+  - first:
+      213: 3752361293258884687
+    second: bort01_44
+  - first:
+      213: 486570295159284078
+    second: bort01_45
+  - first:
+      213: 2430685071972361275
+    second: bort01_46
+  - first:
+      213: -567705356189158054
+    second: bort01_47
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 25
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 12
+    textureCompression: 1
+    compressionQuality: 25
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 12
+    textureCompression: 1
+    compressionQuality: 25
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bort01_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 998
+        width: 1177
+        height: 1837
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39dc970c46d03e5e0800000000000000
+      internalID: -1881645492933636717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_0
+      rect:
+        serializedVersion: 2
+        x: 4766
+        y: 7
+        width: 898
+        height: 752
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63903173605930800800000000000000
+      internalID: 577469031159892278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_2
+      rect:
+        serializedVersion: 2
+        x: 4705
+        y: 1914
+        width: 964
+        height: 918
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfc0629e9942773c0800000000000000
+      internalID: -4361977470624854787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_3
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 4
+        width: 1216
+        height: 722
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 904e84f00607ae910800000000000000
+      internalID: 1867428553374098441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_4
+      rect:
+        serializedVersion: 2
+        x: 2493
+        y: 563
+        width: 445
+        height: 334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 358684ef6817c6250800000000000000
+      internalID: 5939246833200556115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_5
+      rect:
+        serializedVersion: 2
+        x: 3867
+        y: 452
+        width: 443
+        height: 408
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d28b164246878590800000000000000
+      internalID: -7672015821000178986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_6
+      rect:
+        serializedVersion: 2
+        x: 2447
+        y: 1
+        width: 779
+        height: 559
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1583c079e34563790800000000000000
+      internalID: -7550755097441191855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_7
+      rect:
+        serializedVersion: 2
+        x: 3711
+        y: 0
+        width: 609
+        height: 450
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2166eca3651dfe100800000000000000
+      internalID: 139560281755772434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_8
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 766
+        width: 504
+        height: 207
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdad70d21997a1280800000000000000
+      internalID: -9071804834951734564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_9
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 846
+        width: 161
+        height: 127
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe08c17d7a8770890800000000000000
+      internalID: -7491886792843689745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1200
+        height: 705
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 833edb99efb6029c0800000000000000
+      internalID: -3954041731586071752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_11
+      rect:
+        serializedVersion: 2
+        x: 3318
+        y: 37
+        width: 365
+        height: 369
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cae18ddc50ffcd70800000000000000
+      internalID: 9065728856564034240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_12
+      rect:
+        serializedVersion: 2
+        x: 3232
+        y: 544
+        width: 603
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bb865445fa067400800000000000000
+      internalID: 321456471933356983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_13
+      rect:
+        serializedVersion: 2
+        x: 2778
+        y: 1078
+        width: 429
+        height: 1239
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1e16ebab25c5dfd0800000000000000
+      internalID: -2317729641854001637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_14
+      rect:
+        serializedVersion: 2
+        x: 2303
+        y: 1053
+        width: 460
+        height: 1248
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd481d6733d8ef6e0800000000000000
+      internalID: -1801847548725328676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_15
+      rect:
+        serializedVersion: 2
+        x: 3350
+        y: 2164
+        width: 332
+        height: 671
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecda27995f1b7a650800000000000000
+      internalID: 6244155076772015566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_17
+      rect:
+        serializedVersion: 2
+        x: 3700
+        y: 2340
+        width: 314
+        height: 488
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae751e0cee0201de0800000000000000
+      internalID: -1364554477282961430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_18
+      rect:
+        serializedVersion: 2
+        x: 4014
+        y: 2338
+        width: 332
+        height: 487
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13907fd7405030710800000000000000
+      internalID: 1658174604653824305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_19
+      rect:
+        serializedVersion: 2
+        x: 4318
+        y: 1897
+        width: 338
+        height: 441
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a4b133874d0e4120800000000000000
+      internalID: 2399870252229964965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_20
+      rect:
+        serializedVersion: 2
+        x: 4363
+        y: 2343
+        width: 322
+        height: 485
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c64d5b2ffcb3253a0800000000000000
+      internalID: -6678209533120752532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_21
+      rect:
+        serializedVersion: 2
+        x: 3803
+        y: 2020
+        width: 489
+        height: 276
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf1811b2cfe358890800000000000000
+      internalID: -7456484355266739716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_22
+      rect:
+        serializedVersion: 2
+        x: 3807
+        y: 1724
+        width: 490
+        height: 292
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd44501b0e62da560800000000000000
+      internalID: 7326554915286107357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_23
+      rect:
+        serializedVersion: 2
+        x: 3801
+        y: 1436
+        width: 501
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d535d1d80bda57b30800000000000000
+      internalID: 4284521594306253661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_24
+      rect:
+        serializedVersion: 2
+        x: 3801
+        y: 1146
+        width: 515
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d00741406176fcd0800000000000000
+      internalID: -2524705882868612909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_25
+      rect:
+        serializedVersion: 2
+        x: 4374
+        y: 1610
+        width: 217
+        height: 238
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 276b63aa0f969dc90800000000000000
+      internalID: -7144562851477801358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_26
+      rect:
+        serializedVersion: 2
+        x: 4330
+        y: 1143
+        width: 324
+        height: 456
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bff0a6d570ceb9060800000000000000
+      internalID: 6961417165407391739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_27
+      rect:
+        serializedVersion: 2
+        x: 3399
+        y: 1559
+        width: 341
+        height: 462
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4d4f84985d8eb7a0800000000000000
+      internalID: -6359490212211503798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_28
+      rect:
+        serializedVersion: 2
+        x: 3432
+        y: 1038
+        width: 364
+        height: 497
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c27b707e35bf276d0800000000000000
+      internalID: -2994054464471058644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_29
+      rect:
+        serializedVersion: 2
+        x: 3866
+        y: 926
+        width: 190
+        height: 197
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4db1da2efb2ba09e0800000000000000
+      internalID: -1654313375893742636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_30
+      rect:
+        serializedVersion: 2
+        x: 4079
+        y: 909
+        width: 218
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3cfc1572a4b6ccd0800000000000000
+      internalID: -2538142730134160326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_31
+      rect:
+        serializedVersion: 2
+        x: 4704
+        y: 1148
+        width: 475
+        height: 543
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fa266d3cc173f020800000000000000
+      internalID: 2374366550571756276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_32
+      rect:
+        serializedVersion: 2
+        x: 5223
+        y: 1146
+        width: 442
+        height: 698
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c85840445da0dd820800000000000000
+      internalID: 2944521642455631244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_33
+      rect:
+        serializedVersion: 2
+        x: 1194
+        y: 731
+        width: 795
+        height: 754
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96ec9bc0fd4c83ab0800000000000000
+      internalID: -5028052521688904087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_34
+      rect:
+        serializedVersion: 2
+        x: 5535
+        y: 770
+        width: 133
+        height: 331
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 910a5c59dad6350d0800000000000000
+      internalID: -3435281498444029927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_35
+      rect:
+        serializedVersion: 2
+        x: 1204
+        y: 1492
+        width: 598
+        height: 317
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39fd459a86706a380800000000000000
+      internalID: -8960466262508118125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_36
+      rect:
+        serializedVersion: 2
+        x: 4356
+        y: 810
+        width: 506
+        height: 279
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b213c50ef6d23d40800000000000000
+      internalID: 5562744876262691510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_16
+      rect:
+        serializedVersion: 2
+        x: 5401
+        y: 769
+        width: 133
+        height: 333
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e364a0567be77b9e0800000000000000
+      internalID: -1605675415995005378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_37
+      rect:
+        serializedVersion: 2
+        x: 5255
+        y: 768
+        width: 143
+        height: 334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99b8105cd37df4df0800000000000000
+      internalID: -193699598655452263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_38
+      rect:
+        serializedVersion: 2
+        x: 2548
+        y: 2464
+        width: 678
+        height: 371
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 363e8a6ee27a0faa0800000000000000
+      internalID: -6129215272971082909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_39
+      rect:
+        serializedVersion: 2
+        x: 4373
+        y: 60
+        width: 386
+        height: 387
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ea076cabccd76300800000000000000
+      internalID: 245407472043887329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_40
+      rect:
+        serializedVersion: 2
+        x: 4336
+        y: 454
+        width: 386
+        height: 306
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e14936d08bde68120800000000000000
+      internalID: 2415879624885244958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_41
+      rect:
+        serializedVersion: 2
+        x: 1816
+        y: 1521
+        width: 467
+        height: 367
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3efee2ff8405fdb0800000000000000
+      internalID: -4758892414944477633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_42
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 725
+        width: 258
+        height: 265
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3e95857897cde240800000000000000
+      internalID: 4822730233604316731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_43
+      rect:
+        serializedVersion: 2
+        x: 2047
+        y: 1142
+        width: 249
+        height: 368
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aee4814c00066c10800000000000000
+      internalID: 2046323133325307558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_44
+      rect:
+        serializedVersion: 2
+        x: 2030
+        y: 725
+        width: 249
+        height: 415
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f460f9127b0131430800000000000000
+      internalID: 3752361293258884687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_45
+      rect:
+        serializedVersion: 2
+        x: 1218
+        y: 2245
+        width: 869
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e61e9310b15a0c600800000000000000
+      internalID: 486570295159284078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_46
+      rect:
+        serializedVersion: 2
+        x: 5114
+        y: 765
+        width: 141
+        height: 335
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b34e1c3d1378bb120800000000000000
+      internalID: 2430685071972361275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bort01_47
+      rect:
+        serializedVersion: 2
+        x: 1347
+        y: 1918
+        width: 305
+        height: 133
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5532438cfa1f18f0800000000000000
+      internalID: -567705356189158054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,150 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Z1_Variant3
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 12
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 3
+      m_BuildTarget: Standalone
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 29
+      m_TextureCompression: 1
+      m_CompressionQuality: 12
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 3
+      m_BuildTarget: WebGL
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 29
+      m_TextureCompression: 1
+      m_CompressionQuality: 12
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: e01987765dc54094ab1668b8a1c32d18, type: 3}
+    - {fileID: 2800000, guid: 274c6482ccd014c4788e4e82c51e26e7, type: 3}
+    - {fileID: 2800000, guid: 03034c53dc5859b47863afa19ed711da, type: 3}
+    - {fileID: 2800000, guid: a6c7911f4658a30459a2ceb0b35fe5f6, type: 3}
+    - {fileID: 2800000, guid: 0a115ad7142ec9148a49ecef9bbbc4ef, type: 3}
+    - {fileID: 2800000, guid: 22fec37c8dc44aa4182133783a048dff, type: 3}
+    - {fileID: 2800000, guid: 5e85654a061c914449d51f2cdc6a8107, type: 3}
+    - {fileID: 2800000, guid: 29342e3a64253a841a06b1f278da9ce1, type: 3}
+    - {fileID: 2800000, guid: 7bfc9872782bd2b4bb76189246a33712, type: 3}
+    - {fileID: 2800000, guid: 51583f3c61a273e41bc2ebb64069ba70, type: 3}
+    - {fileID: 2800000, guid: 17bda9a4557abae4f91d3e6bd68f9d58, type: 3}
+    - {fileID: 2800000, guid: ef092f6173a8a2145acd226d0d29b9d4, type: 3}
+    - {fileID: 2800000, guid: c328ec1a081ae584a8fe32c1372db6db, type: 3}
+    - {fileID: 2800000, guid: 1de5ccc99bd6f7c4cbc6ba40a21237c9, type: 3}
+    - {fileID: 2800000, guid: 9c53b4a2d230dd74fbe3fb7137fe72b9, type: 3}
+    - {fileID: 2800000, guid: f3bdc8a34f71ba64eb36cf635bed8951, type: 3}
+    - {fileID: 2800000, guid: 445e652eaa04a6c4a9a184f7a7608c79, type: 3}
+    - {fileID: 2800000, guid: e6687879cbd14f043a24520daa1a5105, type: 3}
+    - {fileID: 2800000, guid: 9cfe3d3df82fe7949a4e6a1c9823fb6b, type: 3}
+    - {fileID: 2800000, guid: 8eaa45219d05bb84b989c6ec67710d84, type: 3}
+    - {fileID: 2800000, guid: e407d2aa2b4bc27429147ba1c04c6027, type: 3}
+    - {fileID: 2800000, guid: 27e685de263413543b1bb3ec919a0b00, type: 3}
+    - {fileID: 2800000, guid: 519a8c6ebd5690e49aa721f45e21e2a3, type: 3}
+    - {fileID: 2800000, guid: 08843947d8aa62644b4f2c85972a675a, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 8eaa45219d05bb84b989c6ec67710d84, type: 3}
+  - {fileID: 21300000, guid: ef092f6173a8a2145acd226d0d29b9d4, type: 3}
+  - {fileID: 21300000, guid: 7bfc9872782bd2b4bb76189246a33712, type: 3}
+  - {fileID: 21300000, guid: 274c6482ccd014c4788e4e82c51e26e7, type: 3}
+  - {fileID: 21300000, guid: 9c53b4a2d230dd74fbe3fb7137fe72b9, type: 3}
+  - {fileID: 21300000, guid: 03034c53dc5859b47863afa19ed711da, type: 3}
+  - {fileID: 21300000, guid: f3bdc8a34f71ba64eb36cf635bed8951, type: 3}
+  - {fileID: 21300000, guid: 17bda9a4557abae4f91d3e6bd68f9d58, type: 3}
+  - {fileID: 21300000, guid: e01987765dc54094ab1668b8a1c32d18, type: 3}
+  - {fileID: 21300000, guid: 08843947d8aa62644b4f2c85972a675a, type: 3}
+  - {fileID: 21300000, guid: 0a115ad7142ec9148a49ecef9bbbc4ef, type: 3}
+  - {fileID: 21300000, guid: e6687879cbd14f043a24520daa1a5105, type: 3}
+  - {fileID: 21300000, guid: 1de5ccc99bd6f7c4cbc6ba40a21237c9, type: 3}
+  - {fileID: 21300000, guid: c328ec1a081ae584a8fe32c1372db6db, type: 3}
+  - {fileID: 21300000, guid: 29342e3a64253a841a06b1f278da9ce1, type: 3}
+  - {fileID: 21300000, guid: 5e85654a061c914449d51f2cdc6a8107, type: 3}
+  - {fileID: 21300000, guid: e407d2aa2b4bc27429147ba1c04c6027, type: 3}
+  - {fileID: 21300000, guid: 51583f3c61a273e41bc2ebb64069ba70, type: 3}
+  - {fileID: 21300000, guid: 22fec37c8dc44aa4182133783a048dff, type: 3}
+  - {fileID: 21300000, guid: 9cfe3d3df82fe7949a4e6a1c9823fb6b, type: 3}
+  - {fileID: 21300000, guid: 445e652eaa04a6c4a9a184f7a7608c79, type: 3}
+  - {fileID: 21300000, guid: 519a8c6ebd5690e49aa721f45e21e2a3, type: 3}
+  - {fileID: 21300000, guid: 27e685de263413543b1bb3ec919a0b00, type: 3}
+  - {fileID: 21300000, guid: a6c7911f4658a30459a2ceb0b35fe5f6, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Z1_Variant3_walk04
+  - Z1_Variant3_idle02
+  - Z1_Variant3_death09
+  - Z1_Variant3_death02
+  - Z1_Variant3_idle05
+  - Z1_Variant3_death03
+  - Z1_Variant3_idle06
+  - Z1_Variant3_idle01
+  - Z1_Variant3_death01
+  - Z1_Variant3_walk08
+  - Z1_Variant3_death05
+  - Z1_Variant3_walk02
+  - Z1_Variant3_idle04
+  - Z1_Variant3_idle03
+  - Z1_Variant3_death08
+  - Z1_Variant3_death07
+  - Z1_Variant3_walk05
+  - Z1_Variant3_death10
+  - Z1_Variant3_death06
+  - Z1_Variant3_walk03
+  - Z1_Variant3_walk01
+  - Z1_Variant3_walk07
+  - Z1_Variant3_walk06
+  - Z1_Variant3_death04
+  m_RenderDataMap: {}
+  m_Tag: Z1_Variant3
+  m_IsVariant: 0

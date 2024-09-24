@@ -1,0 +1,151 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: UI Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: UI
+  m_TableCollectionNameGuidString: 4acf29c97358d2a4faae4fda0af064eb
+  m_Entries:
+  - m_Id: 1848735956992
+    m_Key: damage_improvement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4816327671808
+    m_Key: Coins
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8271930851328
+    m_Key: Current wave
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8930478522368
+    m_Key: you_lose
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9104651190272
+    m_Key: Next wave
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10118875840512
+    m_Key: again
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10868389576704
+    m_Key: 2_life
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11316731314176
+    m_Key: menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12910722023424
+    m_Key: description_2 units_of_damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13536487014400
+    m_Key: 100
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13855652577280
+    m_Key: Buy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13983247499264
+    m_Key: super_shot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14879025004544
+    m_Key: description_shotgun_fire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15387148156928
+    m_Key: 150
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29345779286016
+    m_Key: time_between_shots
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29686612623360
+    m_Key: description_time_between_shots
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30153082142720
+    m_Key: 250
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30688048840704
+    m_Key: vampirism
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30983000686592
+    m_Key: descriptio_1_xp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31372966100992
+    m_Key: 350
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31816442445824
+    m_Key: quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53562872692736
+    m_Key: NotEnoughCoins
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53973272756224
+    m_Key: Bought
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95930971848704
+    m_Key: coins_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 802647896489984
+    m_Key: Music volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 802667299340288
+    m_Key: Effect volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2108333418872832
+    m_Key: drone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2108537752780800
+    m_Key: description_drone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2109308305145856
+    m_Key: 1350
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12015495611940864
+    m_Key: level_complete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12357527895277568
+    m_Key: win!
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    id: 0
+  references:
+    version: 1
+    00000000:
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1704379998305

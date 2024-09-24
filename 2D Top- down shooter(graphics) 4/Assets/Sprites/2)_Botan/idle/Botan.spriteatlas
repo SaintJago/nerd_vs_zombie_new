@@ -1,0 +1,135 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Botan
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 12
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 3
+      m_BuildTarget: Standalone
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 29
+      m_TextureCompression: 1
+      m_CompressionQuality: 12
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 3
+      m_BuildTarget: WebGL
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 29
+      m_TextureCompression: 1
+      m_CompressionQuality: 12
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: aa4482132ea734f48a8faf9204a606a4, type: 3}
+    - {fileID: 2800000, guid: c0a22a8a9e08ef744b96afe72390d0a5, type: 3}
+    - {fileID: 2800000, guid: bfe01a95d49ca64429d3ef218a5e0e0c, type: 3}
+    - {fileID: 2800000, guid: b2ded9de1d47e904bac7e6d13da335f1, type: 3}
+    - {fileID: 2800000, guid: 267ff9e2d07b12248a8c0212e1354a99, type: 3}
+    - {fileID: 2800000, guid: a515db9156f06a34caed81ca251db724, type: 3}
+    - {fileID: 2800000, guid: d223f1762c410284095bed88a10abe01, type: 3}
+    - {fileID: 2800000, guid: 8d9c047a53ffdcb4695f3bb57125d283, type: 3}
+    - {fileID: 2800000, guid: 543a09a84ca768344b7fbfa6c5f2a7d3, type: 3}
+    - {fileID: 2800000, guid: 268ebada55e9a4b408204b9afa967dd5, type: 3}
+    - {fileID: 2800000, guid: efbabe7d41bb863498420b21949b1f6b, type: 3}
+    - {fileID: 2800000, guid: 7eda8b935cc527844ac9f98d551bc516, type: 3}
+    - {fileID: 2800000, guid: 5eb44d42d7ce75440998d4f9db60f934, type: 3}
+    - {fileID: 2800000, guid: 402ada504834cfb4b98483f03749f9ea, type: 3}
+    - {fileID: 2800000, guid: e2e6407529134b34e873aeb9583f98dd, type: 3}
+    - {fileID: 2800000, guid: 479b5a387a917a942aadd9d49819e3f5, type: 3}
+    - {fileID: 2800000, guid: d716e28882ac4ed48aa6b0ee7170e05c, type: 3}
+    - {fileID: 2800000, guid: 1f7aec864ad34a74fb64d41a7829dfd2, type: 3}
+    - {fileID: 2800000, guid: a2c8582ace77bb5479d8f4a16789a037, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 402ada504834cfb4b98483f03749f9ea, type: 3}
+  - {fileID: 21300000, guid: a515db9156f06a34caed81ca251db724, type: 3}
+  - {fileID: 21300000, guid: 5eb44d42d7ce75440998d4f9db60f934, type: 3}
+  - {fileID: 21300000, guid: 267ff9e2d07b12248a8c0212e1354a99, type: 3}
+  - {fileID: 21300000, guid: aa4482132ea734f48a8faf9204a606a4, type: 3}
+  - {fileID: 21300000, guid: 7eda8b935cc527844ac9f98d551bc516, type: 3}
+  - {fileID: 21300000, guid: e2e6407529134b34e873aeb9583f98dd, type: 3}
+  - {fileID: 21300000, guid: bfe01a95d49ca64429d3ef218a5e0e0c, type: 3}
+  - {fileID: 21300000, guid: d223f1762c410284095bed88a10abe01, type: 3}
+  - {fileID: 21300000, guid: 1f7aec864ad34a74fb64d41a7829dfd2, type: 3}
+  - {fileID: 21300000, guid: 479b5a387a917a942aadd9d49819e3f5, type: 3}
+  - {fileID: 21300000, guid: d716e28882ac4ed48aa6b0ee7170e05c, type: 3}
+  - {fileID: 21300000, guid: 543a09a84ca768344b7fbfa6c5f2a7d3, type: 3}
+  - {fileID: 21300000, guid: a2c8582ace77bb5479d8f4a16789a037, type: 3}
+  - {fileID: 21300000, guid: 8d9c047a53ffdcb4695f3bb57125d283, type: 3}
+  - {fileID: 21300000, guid: c0a22a8a9e08ef744b96afe72390d0a5, type: 3}
+  - {fileID: 21300000, guid: 268ebada55e9a4b408204b9afa967dd5, type: 3}
+  - {fileID: 21300000, guid: efbabe7d41bb863498420b21949b1f6b, type: 3}
+  - {fileID: 21300000, guid: b2ded9de1d47e904bac7e6d13da335f1, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - damage particles
+  - walking01
+  - walking08
+  - Idle05
+  - Idle01
+  - walking07
+  - death_0
+  - Idle03
+  - walking02
+  - footprints
+  - death_1
+  - death_2
+  - walking04
+  - transparentcanopy--2x2
+  - walking03
+  - Idle02
+  - walking05
+  - walking06
+  - Idle04
+  m_RenderDataMap: {}
+  m_Tag: Botan
+  m_IsVariant: 0

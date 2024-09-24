@@ -1,0 +1,153 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Z2
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 12
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 3
+      m_BuildTarget: Standalone
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 29
+      m_TextureCompression: 1
+      m_CompressionQuality: 12
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 3
+      m_BuildTarget: WebGL
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 29
+      m_TextureCompression: 1
+      m_CompressionQuality: 12
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: d21587a336697484f8c325ae3a34d584, type: 3}
+    - {fileID: 2800000, guid: 408b741ff9154204aaf32928f6b2c3c8, type: 3}
+    - {fileID: 2800000, guid: a6c32c3baa3a9654d81fdcfb802c697a, type: 3}
+    - {fileID: 2800000, guid: 242ce716010ff4b4bb2ce6049aa7a70c, type: 3}
+    - {fileID: 2800000, guid: 2142fc56d612dc2409e4428f8c406d04, type: 3}
+    - {fileID: 2800000, guid: dcf0ce2722a61f443af7115aa9296b1e, type: 3}
+    - {fileID: 2800000, guid: f89c005c3b7b2e544bc47db187c9ea88, type: 3}
+    - {fileID: 2800000, guid: d19c7156f9d9b274c81b001a2ce08c30, type: 3}
+    - {fileID: 2800000, guid: ee1bb651c01a5eb4fa3162b548e3a3f2, type: 3}
+    - {fileID: 2800000, guid: b0630132b1026714993825b33c4c1ea3, type: 3}
+    - {fileID: 2800000, guid: 8dbb1e96f9e74a943a937c5f0768ad67, type: 3}
+    - {fileID: 2800000, guid: 806bc5e0eb6ec9c4d9e68d88c2f11af8, type: 3}
+    - {fileID: 2800000, guid: 77b73492b5dbe8149a403da22ba5b4b0, type: 3}
+    - {fileID: 2800000, guid: 6bc48d115dc454748b08f3679fec35be, type: 3}
+    - {fileID: 2800000, guid: f98c39ebfec6c0b439e9145de5e064ac, type: 3}
+    - {fileID: 2800000, guid: cb4cab4655113df418668147ec1c6f97, type: 3}
+    - {fileID: 2800000, guid: e2c70e315613b604c99d47655d30533d, type: 3}
+    - {fileID: 2800000, guid: 5e96cb595b95ab047949e92278afadae, type: 3}
+    - {fileID: 2800000, guid: be9ff5ec43565584baaa38cbaddaec6e, type: 3}
+    - {fileID: 2800000, guid: 44833ce361de2b549a0452233d39a441, type: 3}
+    - {fileID: 2800000, guid: 7b0492e7a9a47494291c11b21c1436be, type: 3}
+    - {fileID: 2800000, guid: 4c7ca42d9408fe94080c68fac2ba6c28, type: 3}
+    - {fileID: 2800000, guid: f12286c36e7944d4db3e3ee81b2cc994, type: 3}
+    - {fileID: 2800000, guid: 309d0b0186848ad40aac795b0e8c212e, type: 3}
+    - {fileID: 2800000, guid: 6f801b0a7a7862345b8889d98e1c0772, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 806bc5e0eb6ec9c4d9e68d88c2f11af8, type: 3}
+  - {fileID: 21300000, guid: 309d0b0186848ad40aac795b0e8c212e, type: 3}
+  - {fileID: 21300000, guid: 6bc48d115dc454748b08f3679fec35be, type: 3}
+  - {fileID: 21300000, guid: e2c70e315613b604c99d47655d30533d, type: 3}
+  - {fileID: 21300000, guid: ee1bb651c01a5eb4fa3162b548e3a3f2, type: 3}
+  - {fileID: 21300000, guid: b0630132b1026714993825b33c4c1ea3, type: 3}
+  - {fileID: 21300000, guid: 77b73492b5dbe8149a403da22ba5b4b0, type: 3}
+  - {fileID: 21300000, guid: d21587a336697484f8c325ae3a34d584, type: 3}
+  - {fileID: 21300000, guid: f12286c36e7944d4db3e3ee81b2cc994, type: 3}
+  - {fileID: 21300000, guid: 44833ce361de2b549a0452233d39a441, type: 3}
+  - {fileID: 21300000, guid: 242ce716010ff4b4bb2ce6049aa7a70c, type: 3}
+  - {fileID: 21300000, guid: cb4cab4655113df418668147ec1c6f97, type: 3}
+  - {fileID: 21300000, guid: d19c7156f9d9b274c81b001a2ce08c30, type: 3}
+  - {fileID: 21300000, guid: 2142fc56d612dc2409e4428f8c406d04, type: 3}
+  - {fileID: 21300000, guid: 8dbb1e96f9e74a943a937c5f0768ad67, type: 3}
+  - {fileID: 21300000, guid: dcf0ce2722a61f443af7115aa9296b1e, type: 3}
+  - {fileID: 21300000, guid: 7b0492e7a9a47494291c11b21c1436be, type: 3}
+  - {fileID: 21300000, guid: 5e96cb595b95ab047949e92278afadae, type: 3}
+  - {fileID: 21300000, guid: 6f801b0a7a7862345b8889d98e1c0772, type: 3}
+  - {fileID: 21300000, guid: a6c32c3baa3a9654d81fdcfb802c697a, type: 3}
+  - {fileID: 21300000, guid: f98c39ebfec6c0b439e9145de5e064ac, type: 3}
+  - {fileID: 21300000, guid: f89c005c3b7b2e544bc47db187c9ea88, type: 3}
+  - {fileID: 21300000, guid: be9ff5ec43565584baaa38cbaddaec6e, type: 3}
+  - {fileID: 21300000, guid: 4c7ca42d9408fe94080c68fac2ba6c28, type: 3}
+  - {fileID: 21300000, guid: 408b741ff9154204aaf32928f6b2c3c8, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - z2_idle01
+  - z2_run07
+  - z2_idle03
+  - z2_idle06
+  - z2_death09
+  - z2_death10
+  - z2_idle02
+  - z2_death01
+  - z2_run06
+  - z2_run03
+  - z2_death04
+  - z2_idle05
+  - z2_death08
+  - z2_death05
+  - z2_death11
+  - z2_death06
+  - z2_run04
+  - z2_run01
+  - z2_run08
+  - z2_death03
+  - z2_idle04
+  - z2_death07
+  - z2_run02
+  - z2_run05
+  - z2_death02
+  m_RenderDataMap: {}
+  m_Tag: Z2
+  m_IsVariant: 0
