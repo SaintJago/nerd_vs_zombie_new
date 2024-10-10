@@ -7,206 +7,220 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-		[SerializeField] float speed;
-		[SerializeField] int health;
-		[HideInInspector] public int maxHealth;
+    [SerializeField] float speed;
+    [SerializeField] int health;
+    [HideInInspector] public int maxHealth;
+    Rigidbody2D rb;
+    Vector2 moveVelocity;
+    Animator anim;
+    SpriteRenderer spR;
+    [SerializeField] TextMeshProUGUI text;
+    public static Player Instance;
+    [SerializeField] GameObject hitEffect;
+    [SerializeField] float dashForce, timeBtwDash, dashTime;
+    float dashTimer;
+    bool isDashing = false;
+    [SerializeField] Slider healthSlider;
+    [SerializeField] Slider dashSlider;
+    [SerializeField] ParticleSystem footParticle;
+    [SerializeField] GameObject deathPanel;
+    [SerializeField] GameObject dronePrefab;
+    public GameObject droneInstance { get; private set; }
+    bool canBeDamaged = true;
+    [SerializeField] AudioClip heartClip, deathClip, dashSound;
+    [SerializeField] AudioClip[] footClips;
+    AudioSource audS;
+    Vector2 moveInput;
+    [HideInInspector] public int currentMoney;
+    [SerializeField] TextMeshProUGUI coinsText;
 
-		Rigidbody2D rb;
-		Vector2 moveVelocity;
+    // Input System
+    private PlayerControls controls;
+    private InputAction moveAction;
+    private InputAction dashAction;
 
-		Animator anim;
-		SpriteRenderer spR;
+    // Joystick Pack
+    [SerializeField] private Joystick joystick;
+    [SerializeField] private Button dashButton;
 
-		[SerializeField] TextMeshProUGUI text;
+    private bool isMobile;
 
-		public static Player Instance;
+    private void Awake()
+    {
+        Instance = this;
+        controls = new PlayerControls();
+        moveAction = controls.Player.move;
+        dashAction = controls.Player.dash;
+        dashAction.performed += _ => TryDash();
 
-		[SerializeField] GameObject hitEffect;
+        isMobile = Application.isMobilePlatform;
 
-		[SerializeField] float dashForce, timeBtwDash, dashTime;
-		float dashTimer;
-		bool isDashing = false;
+        SetMobileControlsVisibility(isMobile);
 
-		[SerializeField] Slider healthSlider;
-		[SerializeField] Slider dashSlider;
-		[SerializeField] ParticleSystem footParticle;
-		[SerializeField] GameObject deathPanel;
-		[SerializeField] GameObject dronePrefab;
-		public GameObject droneInstance { get; private set; }
+        if (isMobile && dashButton != null)
+        {
+            dashButton.onClick.AddListener(TryDash);
+        }
+    }
 
-		bool canBeDamaged = true;
+    private void SetMobileControlsVisibility(bool visible)
+    {
+        if (joystick != null)
+            joystick.gameObject.SetActive(visible);
+        if (dashButton != null)
+            dashButton.gameObject.SetActive(visible);
+    }
 
-		[SerializeField] AudioClip heartClip, deathClip, dashSound;
-		[SerializeField] AudioClip[] footClips;
-		AudioSource audS;
+    private void OnEnable()
+    {
+        if (!isMobile)
+        {
+            controls.Enable();
+        }
+    }
 
-		Vector2 moveInput;
-		[HideInInspector] public int currentMoney;
-		[SerializeField] TextMeshProUGUI coinsText;
+    private void OnDisable()
+    {
+        if (!isMobile)
+        {
+            controls.Disable();
+        }
+    }
 
-		// Input System
-		private PlayerControls controls;
-		private InputAction moveAction;
-		private InputAction dashAction;
-		
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        spR = GetComponent<SpriteRenderer>();
+        audS = GetComponent<AudioSource>();
+        dashTimer = timeBtwDash;
+        maxHealth = health;
+        UpdateHealthUI();
+        droneInstance = Instantiate(dronePrefab, transform.position, Quaternion.identity);
+        droneInstance.SetActive(false);
+    }
 
-		private void Awake()
-		{
-				Instance = this;
-				controls = new PlayerControls();
-				moveAction = controls.Player.move;
-				dashAction = controls.Player.dash;
+    void Update()
+    {
+        dashTimer += Time.deltaTime;
+        dashSlider.value = dashTimer / timeBtwDash;
+    }
 
-				dashAction.performed += _ => TryDash();
-		}
+    private void FixedUpdate()
+    {
+        Move();
+        if (isDashing) Dash();
+    }
 
-		private void OnEnable()
-		{
-				controls.Enable();
-		}
+    void Move()
+    {
+        if (isMobile)
+        {
+            moveInput = new Vector2(joystick.Horizontal, joystick.Vertical);
+        }
+        else
+        {
+            moveInput = moveAction.ReadValue<Vector2>();
+        }
 
-		private void OnDisable()
-		{
-				controls.Disable();
-		}
+        if (moveInput != Vector2.zero)
+        {
+            anim.SetBool("run", true);
+            footParticle.Pause();
+            footParticle.Play();
+            var emission = footParticle.emission;
+            emission.rateOverTime = 10;
+            if (!audS.isPlaying)
+            {
+                audS.clip = footClips[Random.Range(0, footClips.Length)];
+                audS.Play();
+            }
+        }
+        else
+        {
+            anim.SetBool("run", false);
+            var emission = footParticle.emission;
+            emission.rateOverTime = 0;
+        }
 
-		void Start()
-		{
-				rb = GetComponent<Rigidbody2D>();
-				anim = GetComponent<Animator>();
-				spR = GetComponent<SpriteRenderer>();
-				audS = GetComponent<AudioSource>();
+        ScalePlayer(moveInput.x);
+        moveVelocity = moveInput.normalized * speed;
+        rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
+    }
 
-				dashTimer = timeBtwDash;
-				maxHealth = health;
+    void ScalePlayer(float x)
+    {
+        if (x > 0) spR.flipX = false;
+        else if (x < 0) spR.flipX = true;
+    }
 
-				UpdateHealthUI();
-				droneInstance = Instantiate(dronePrefab, transform.position, Quaternion.identity);
-				droneInstance.SetActive(false);
-		}
+    void TryDash()
+    {
+        if (dashTimer >= timeBtwDash)
+        {
+            dashTimer = 0;
+            ActivateDash();
+        }
+    }
 
-		void Update()
-		{
-				dashTimer += Time.deltaTime;
-				dashSlider.value = dashTimer / timeBtwDash;
-		}
+    void Dash()
+    {
+        rb.AddForce(moveInput * Time.fixedDeltaTime * dashForce * 100);
+    }
 
-		private void FixedUpdate()
-		{
-				Move();
-				if (isDashing) Dash();
-		}
+    void ActivateDash()
+    {
+        isDashing = true;
+        canBeDamaged = false;
+        SoundManager.Instance.PlayerSound(dashSound);
+        Invoke(nameof(DeActivateDash), dashTime);
+    }
 
-		void TryDash()
-		{
-				if (dashTimer >= timeBtwDash)
-				{
-						dashTimer = 0;
-						ActivateDash();
-				}
-		}
+    void DeActivateDash()
+    {
+        isDashing = false;
+        canBeDamaged = true;
+    }
 
-		void Dash()
-		{
-				rb.AddForce(moveInput * Time.fixedDeltaTime * dashForce * 100);
-		}
+    public void Damage(int damage)
+    {
+        if (!canBeDamaged) return;
+        health -= damage;
+        Instantiate(hitEffect, transform.position, Quaternion.identity);
+        CameraFollow.Instance.CamShake();
+        SoundManager.Instance.PlayerSound(heartClip);
+        UpdateHealthUI();
+        if (health <= 0 && deathPanel.activeInHierarchy == false)
+        {
+            PauseManager.PauseGame();
+            SoundManager.Instance.PlayerSound(deathClip);
+            deathPanel.SetActive(true);
+            gameObject.SetActive(false);
+        }
+    }
 
-		void ActivateDash()
-		{
-				isDashing = true;
-				canBeDamaged = false;
-				SoundManager.Instance.PlayerSound(dashSound);
-				Invoke(nameof(DeActivateDash), dashTime);
-		}
+    public void AddHealth(int value)
+    {
+        if (health <= 0) health = 0;
+        health += value;
+        if (health > maxHealth) health = maxHealth;
+        UpdateHealthUI();
+    }
 
-		void DeActivateDash()
-		{
-				isDashing = false;
-				canBeDamaged = true;
-		}
+    void UpdateHealthUI()
+    {
+        healthSlider.value = (float)health / maxHealth;
+    }
 
-		void Move()
-		{
-				moveInput = moveAction.ReadValue<Vector2>();
-
-				if (moveInput != Vector2.zero)
-				{
-						anim.SetBool("run", true);
-						footParticle.Pause();
-						footParticle.Play();
-
-						var emission = footParticle.emission;
-						emission.rateOverTime = 10;
-
-						if (!audS.isPlaying)
-						{
-								audS.clip = footClips[Random.Range(0, footClips.Length)];
-								audS.Play();
-						}
-				}
-				else
-				{
-						anim.SetBool("run", false);
-						var emission = footParticle.emission;
-						emission.rateOverTime = 0;
-				}
-
-				ScalePlayer(moveInput.x);
-				moveVelocity = moveInput.normalized * speed;
-				rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
-		}
-
-		void ScalePlayer(float x)
-		{
-				if (x > 0)
-						spR.flipX = false;
-				else if (x < 0)
-						spR.flipX = true;
-		}
-
-		public void Damage(int damage)
-		{
-				if (!canBeDamaged) return;
-
-				health -= damage;
-				Instantiate(hitEffect, transform.position, Quaternion.identity);
-				CameraFollow.Instance.CamShake();
-				SoundManager.Instance.PlayerSound(heartClip);
-				UpdateHealthUI();
-
-				if (health <= 0 && deathPanel.activeInHierarchy == false)
-				{
-						PauseManager.PauseGame();
-						SoundManager.Instance.PlayerSound(deathClip);
-						deathPanel.SetActive(true);
-						gameObject.SetActive(false);
-				}
-		}
-
-		public void AddHealth(int value)
-		{
-				if (health <= 0) health = 0;
-				health += value;
-
-				if (health > maxHealth) health = maxHealth;
-				UpdateHealthUI();
-		}
-
-		void UpdateHealthUI()
-		{
-				healthSlider.value = (float)health / maxHealth;
-		}
-
-		public void AddMoney(int value)
-		{
-				currentMoney += value;
-
-				LocalizationSettings.StringDatabase.GetLocalizedStringAsync("UI", "Coins").Completed += op =>
-				{
-						if (op.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
-						{
-								coinsText.text = op.Result + ": " + currentMoney.ToString();
-						}
-				};
-		}
+    public void AddMoney(int value)
+    {
+        currentMoney += value;
+        LocalizationSettings.StringDatabase.GetLocalizedStringAsync("UI", "Coins").Completed += op =>
+        {
+            if (op.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
+            {
+                coinsText.text = op.Result + ": " + currentMoney.ToString();
+            }
+        };
+    }
 }

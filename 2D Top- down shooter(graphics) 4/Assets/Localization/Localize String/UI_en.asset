@@ -144,6 +144,10 @@ MonoBehaviour:
     m_Localized: You win!!!
     m_Metadata:
       m_Items: []
+  - m_Id: 97525571071770624
+    m_Localized: Nerd vs zombie!
+    m_Metadata:
+      m_Items: []
   references:
     version: 1
     00000000:

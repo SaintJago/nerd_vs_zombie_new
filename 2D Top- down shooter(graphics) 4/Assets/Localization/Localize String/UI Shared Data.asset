@@ -139,6 +139,10 @@ MonoBehaviour:
     m_Key: win!
     m_Metadata:
       m_Items: []
+  - m_Id: 97525571071770624
+    m_Key: game_name
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

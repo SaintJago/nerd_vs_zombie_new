@@ -252,6 +252,74 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             ""id"": ""533f9225-d871-40f1-aba3-2c4124ec2f8b"",
             ""actions"": [],
             ""bindings"": []
+        },
+        {
+            ""name"": ""Comic"",
+            ""id"": ""11f96b83-eb42-4f4c-87bd-136f98ef93d4"",
+            ""actions"": [
+                {
+                    ""name"": ""Next"",
+                    ""type"": ""Button"",
+                    ""id"": ""d8f50467-79c1-408d-86ed-12c4c2ff4c39"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Skip"",
+                    ""type"": ""Button"",
+                    ""id"": ""a24309b0-7a63-4265-8e5a-622c33f1de35"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Click"",
+                    ""type"": ""Button"",
+                    ""id"": ""ba0e285b-121f-477d-9269-5c90bd0c385a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""524519aa-4f46-4d45-9b1f-3a5336778050"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse and Keyboard"",
+                    ""action"": ""Skip"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0aee0a43-35f4-4c42-9778-1674ccdd1e2b"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse and Keyboard"",
+                    ""action"": ""Click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""061124f0-9fff-4e70-a675-dc0914beebb3"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse and Keyboard"",
+                    ""action"": ""Next"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -278,6 +346,11 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_dash = m_Player.FindAction("dash", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
+        // Comic
+        m_Comic = asset.FindActionMap("Comic", throwIfNotFound: true);
+        m_Comic_Next = m_Comic.FindAction("Next", throwIfNotFound: true);
+        m_Comic_Skip = m_Comic.FindAction("Skip", throwIfNotFound: true);
+        m_Comic_Click = m_Comic.FindAction("Click", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -427,6 +500,68 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         }
     }
     public UIActions @UI => new UIActions(this);
+
+    // Comic
+    private readonly InputActionMap m_Comic;
+    private List<IComicActions> m_ComicActionsCallbackInterfaces = new List<IComicActions>();
+    private readonly InputAction m_Comic_Next;
+    private readonly InputAction m_Comic_Skip;
+    private readonly InputAction m_Comic_Click;
+    public struct ComicActions
+    {
+        private @PlayerControls m_Wrapper;
+        public ComicActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Next => m_Wrapper.m_Comic_Next;
+        public InputAction @Skip => m_Wrapper.m_Comic_Skip;
+        public InputAction @Click => m_Wrapper.m_Comic_Click;
+        public InputActionMap Get() { return m_Wrapper.m_Comic; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(ComicActions set) { return set.Get(); }
+        public void AddCallbacks(IComicActions instance)
+        {
+            if (instance == null || m_Wrapper.m_ComicActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_ComicActionsCallbackInterfaces.Add(instance);
+            @Next.started += instance.OnNext;
+            @Next.performed += instance.OnNext;
+            @Next.canceled += instance.OnNext;
+            @Skip.started += instance.OnSkip;
+            @Skip.performed += instance.OnSkip;
+            @Skip.canceled += instance.OnSkip;
+            @Click.started += instance.OnClick;
+            @Click.performed += instance.OnClick;
+            @Click.canceled += instance.OnClick;
+        }
+
+        private void UnregisterCallbacks(IComicActions instance)
+        {
+            @Next.started -= instance.OnNext;
+            @Next.performed -= instance.OnNext;
+            @Next.canceled -= instance.OnNext;
+            @Skip.started -= instance.OnSkip;
+            @Skip.performed -= instance.OnSkip;
+            @Skip.canceled -= instance.OnSkip;
+            @Click.started -= instance.OnClick;
+            @Click.performed -= instance.OnClick;
+            @Click.canceled -= instance.OnClick;
+        }
+
+        public void RemoveCallbacks(IComicActions instance)
+        {
+            if (m_Wrapper.m_ComicActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IComicActions instance)
+        {
+            foreach (var item in m_Wrapper.m_ComicActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_ComicActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public ComicActions @Comic => new ComicActions(this);
     private int m_MouseandKeyboardSchemeIndex = -1;
     public InputControlScheme MouseandKeyboardScheme
     {
@@ -461,5 +596,11 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     }
     public interface IUIActions
     {
+    }
+    public interface IComicActions
+    {
+        void OnNext(InputAction.CallbackContext context);
+        void OnSkip(InputAction.CallbackContext context);
+        void OnClick(InputAction.CallbackContext context);
     }
 }

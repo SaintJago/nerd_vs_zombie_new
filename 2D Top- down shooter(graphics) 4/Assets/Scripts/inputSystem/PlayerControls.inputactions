@@ -230,6 +230,74 @@
             "id": "533f9225-d871-40f1-aba3-2c4124ec2f8b",
             "actions": [],
             "bindings": []
+        },
+        {
+            "name": "Comic",
+            "id": "11f96b83-eb42-4f4c-87bd-136f98ef93d4",
+            "actions": [
+                {
+                    "name": "Next",
+                    "type": "Button",
+                    "id": "d8f50467-79c1-408d-86ed-12c4c2ff4c39",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Skip",
+                    "type": "Button",
+                    "id": "a24309b0-7a63-4265-8e5a-622c33f1de35",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Click",
+                    "type": "Button",
+                    "id": "ba0e285b-121f-477d-9269-5c90bd0c385a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "524519aa-4f46-4d45-9b1f-3a5336778050",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "Skip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0aee0a43-35f4-4c42-9778-1674ccdd1e2b",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "061124f0-9fff-4e70-a675-dc0914beebb3",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "Next",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
