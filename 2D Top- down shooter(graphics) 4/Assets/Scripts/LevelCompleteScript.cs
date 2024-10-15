@@ -6,20 +6,16 @@ public class LevelCompleteScript : MonoBehaviour
 {
     public void OnLevelComplete()
     {
-        // Возобновить игру
+        Debug.Log("OnLevelComplete called");
         PauseManager.ResumeGame();
 
-        // Если уровень является последним разблокированным уровнем, увеличиваем количество разблокированных уровней и сохраняем это
         if (LevelSelectionMenuManager.currLevel == LevelSelectionMenuManager.unlockedLevels)
         {
             LevelSelectionMenuManager.unlockedLevels++;
             SaveGame.Save<int>("unlockedLevels", LevelSelectionMenuManager.unlockedLevels);
         }
 
-        // Загружаем сцену меню
         SceneManager.LoadScene("Menu");
-
-        // Добавляем действие, которое будет выполнено после загрузки сцены
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
@@ -27,15 +23,44 @@ public class LevelCompleteScript : MonoBehaviour
     {
         if (scene.name == "Menu")
         {
-            // Находим и активируем панель выбора уровней
-            GameObject levelSelectMenu = GameObject.Find("LevelSelectMenu");
-            if (levelSelectMenu != null)
-            {
-                levelSelectMenu.SetActive(true);
-            }
-
-            // Отписываемся от события, чтобы оно не вызывалось повторно
+            Debug.Log("Menu scene loaded, searching for LevelSelectMenu");
+            Invoke("ActivateLevelSelectMenu", 0.1f);
             SceneManager.sceneLoaded -= OnSceneLoaded;
         }
+    }
+
+    private void ActivateLevelSelectMenu()
+    {
+        Canvas canvas = FindObjectOfType<Canvas>();
+        if (canvas != null)
+        {
+            Transform mainMenu = canvas.transform.Find("MainMenu");
+            if (mainMenu != null)
+            {
+                Transform levelSelectMenu = mainMenu.Find("LevelSelectMenu");
+                if (levelSelectMenu != null)
+                {
+                    levelSelectMenu.gameObject.SetActive(true);
+                    Debug.Log("LevelSelectMenu activated successfully");
+                }
+                else
+                {
+                    Debug.LogError("LevelSelectMenu not found in MainMenu");
+                }
+            }
+            else
+            {
+                Debug.LogError("MainMenu not found in Canvas");
+            }
+        }
+        else
+        {
+            Debug.LogError("Canvas not found in the scene");
+        }
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }
