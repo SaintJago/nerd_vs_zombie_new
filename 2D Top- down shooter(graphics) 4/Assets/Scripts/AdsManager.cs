@@ -12,7 +12,7 @@ public class AdsManager : MonoBehaviour, IUnityAdsInitializationListener, IUnity
 
     void Start()
     {
-        Advertisement.Initialize("5552395", false, this);
+        Advertisement.Initialize("5714317", false, this);
         audioSource = GetComponent<AudioSource>(); // Получаем компонент AudioSource
     }
     public void ShowAd()
