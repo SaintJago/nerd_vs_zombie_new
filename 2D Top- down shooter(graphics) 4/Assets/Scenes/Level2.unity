@@ -10679,7 +10679,6 @@ GameObject:
   - component: {fileID: 959731705}
   - component: {fileID: 959731704}
   - component: {fileID: 959731703}
-  - component: {fileID: 959731709}
   m_Layer: 5
   m_Name: Button (3)
   m_TagString: Untagged
@@ -10907,7 +10906,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 959731709}
+      - m_Target: {fileID: 299986997}
         m_TargetAssemblyTypeName: DeathPanel, Assembly-CSharp
         m_MethodName: Restart
         m_Mode: 1
@@ -10957,20 +10956,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 959731701}
   m_CullTransparentMesh: 0
---- !u!114 &959731709
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 959731701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3a3382553f54c54da747e77b488aa50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}
-  popSound: {fileID: 0}
 --- !u!1 &960684312
 GameObject:
   m_ObjectHideFlags: 0
@@ -22130,7 +22115,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.06}
   m_AnchorMax: {x: 0.5, y: 0.5456031}
-  m_AnchoredPosition: {x: 0.00024414062, y: -97.25003}
+  m_AnchoredPosition: {x: 0.00024414062, y: -97.250015}
   m_SizeDelta: {x: 2339.2, y: -32.200012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1576337675
@@ -23851,7 +23836,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -8}
+  m_AnchoredPosition: {x: -398, y: -8}
   m_SizeDelta: {x: 1122.6357, y: 113.29761}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &1836607447
