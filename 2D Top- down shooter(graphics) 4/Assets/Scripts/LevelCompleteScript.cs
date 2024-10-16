@@ -4,6 +4,8 @@ using BayatGames.SaveGameFree;
 
 public class LevelCompleteScript : MonoBehaviour
 {
+    private const string SHOW_LEVEL_SELECT_KEY = "ShouldShowLevelSelect";
+
     public void OnLevelComplete()
     {
         Debug.Log("OnLevelComplete called");
@@ -13,54 +15,13 @@ public class LevelCompleteScript : MonoBehaviour
         {
             LevelSelectionMenuManager.unlockedLevels++;
             SaveGame.Save<int>("unlockedLevels", LevelSelectionMenuManager.unlockedLevels);
+            Debug.Log($"Unlocked new level. Total unlocked levels: {LevelSelectionMenuManager.unlockedLevels}");
         }
 
+        PlayerPrefs.SetInt(SHOW_LEVEL_SELECT_KEY, 1);
+        PlayerPrefs.Save();
+
+        Debug.Log("Loading Menu scene");
         SceneManager.LoadScene("Menu");
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        if (scene.name == "Menu")
-        {
-            Debug.Log("Menu scene loaded, searching for LevelSelectMenu");
-            Invoke("ActivateLevelSelectMenu", 0.1f);
-            SceneManager.sceneLoaded -= OnSceneLoaded;
-        }
-    }
-
-    private void ActivateLevelSelectMenu()
-    {
-        Canvas canvas = FindObjectOfType<Canvas>();
-        if (canvas != null)
-        {
-            Transform mainMenu = canvas.transform.Find("MainMenu");
-            if (mainMenu != null)
-            {
-                Transform levelSelectMenu = mainMenu.Find("LevelSelectMenu");
-                if (levelSelectMenu != null)
-                {
-                    levelSelectMenu.gameObject.SetActive(true);
-                    Debug.Log("LevelSelectMenu activated successfully");
-                }
-                else
-                {
-                    Debug.LogError("LevelSelectMenu not found in MainMenu");
-                }
-            }
-            else
-            {
-                Debug.LogError("MainMenu not found in Canvas");
-            }
-        }
-        else
-        {
-            Debug.LogError("Canvas not found in the scene");
-        }
-    }
-
-    private void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }
