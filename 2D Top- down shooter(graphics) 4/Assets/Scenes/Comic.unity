@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 118749758}
   - component: {fileID: 118749757}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: ComicPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1219,6 +1219,7 @@ MonoBehaviour:
   firstPanelDelay: 0.5
   skipButton: {fileID: 180339595}
   exitButton: {fileID: 1771720671}
+  menuSceneName: Menu
 --- !u!4 &1810452714
 Transform:
   m_ObjectHideFlags: 0

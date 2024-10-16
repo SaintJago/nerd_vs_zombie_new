@@ -16,7 +16,6 @@ public class ComicController : MonoBehaviour
     public float normalDisplayTime = 3f;
     public float firstPanelDelay = 0.5f;
     public Button skipButton;
-    public Button exitButton;
     public string menuSceneName = "Menu"; // Имя сцены меню
 
     private int currentPanelIndex = 0;
@@ -33,8 +32,6 @@ public class ComicController : MonoBehaviour
         }
 
         skipButton.onClick.AddListener(SkipComic);
-        exitButton.onClick.AddListener(ExitToLevelSelect);
-
         displayCoroutine = StartCoroutine(DisplayComic());
     }
 
@@ -82,20 +79,7 @@ public class ComicController : MonoBehaviour
         currentPanelIndex = comicPanels.Length;
         Debug.Log("Комикс пропущен");
     }
-
-    private void ExitToLevelSelect()
-    {
-        // Остановить текущее воспроизведение комикса
-        if (displayCoroutine != null)
-        {
-            StopCoroutine(displayCoroutine);
-        }
-        audioSource.Stop();
-
-        // Загрузить сцену меню
-        SceneManager.LoadScene(menuSceneName);
-    }
-
+    
     private void OnDisable()
     {
         if (displayCoroutine != null)
