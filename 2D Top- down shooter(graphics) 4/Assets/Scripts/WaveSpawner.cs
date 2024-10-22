@@ -2,6 +2,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.Localization.Settings;
+using UnityEngine.SceneManagement;
 
 public class WaveSpawner : MonoBehaviour
 {
@@ -42,6 +43,7 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] AudioClip waveCompleteClip;
 
     public GameObject CompletePanel; // Публичное поле для ссылки на CompletePanel
+    [SerializeField] private string videoSceneName; // New field for video scene name
     public float delayBeforeShowingPanel = 3.0f; // Задержка перед показом панели (в секундах)
 
     private void Start()
@@ -65,7 +67,7 @@ public class WaveSpawner : MonoBehaviour
         {
             isSpawnFinished = false;
 
-            if(currentWaveIndex + 1 < waves.Length)
+            if (currentWaveIndex + 1 < waves.Length)
             {
                 currentWaveIndex++;
                 StartCoroutine(CallNextWave(currentWaveIndex));
@@ -141,8 +143,18 @@ public class WaveSpawner : MonoBehaviour
     IEnumerator ShowCompletePanelWithDelay()
     {
         yield return new WaitForSeconds(delayBeforeShowingPanel);
-        CompletePanel.SetActive(true);
-        // Остановка времени
-        PauseManager.PauseGame();
+
+        // Check if video scene name is provided
+        if (!string.IsNullOrEmpty(videoSceneName))
+        {
+            // Load the video scene
+            SceneManager.LoadScene(videoSceneName);
+        }
+        else
+        {
+            // If no video scene is specified, show the complete panel as before
+            CompletePanel.SetActive(true);
+            PauseManager.PauseGame();
+        }
     }
 }
