@@ -10,6 +10,7 @@
     "com.unity.localization": "1.4.5",
     "com.unity.postprocessing": "3.2.2",
     "com.unity.render-pipelines.universal": "10.10.1",
+    "com.unity.services.core": "1.13.0",
     "com.unity.test-framework": "1.1.33",
     "com.unity.textmeshpro": "3.0.9",
     "com.unity.timeline": "1.4.8",

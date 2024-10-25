@@ -5,61 +5,70 @@ using UnityEngine.Advertisements;
 
 public class AdsManager : MonoBehaviour, IUnityAdsInitializationListener, IUnityAdsLoadListener, IUnityAdsShowListener
 {
-    [SerializeField] GameObject rewardedAdsButton, deathPanel;
+	[SerializeField] GameObject rewardedAdsButton, deathPanel;
 
-    [SerializeField] AudioClip popSound;
-    private AudioSource audioSource; // Добавляем компонент AudioSource
+	[SerializeField] SimpleRewardedAds simpleRewardedAds;
 
-    void Start()
-    {
-        Advertisement.Initialize("5714317", false, this);
-        audioSource = GetComponent<AudioSource>(); // Получаем компонент AudioSource
-    }
-    public void ShowAd()
-    {
-        Advertisement.Show("Rewarded_Android", this);
-        audioSource.PlayOneShot(popSound); // Используем AudioSource для воспроизведения звука
-    }
+	[SerializeField] AudioClip popSound;
+	private AudioSource audioSource; // Добавляем компонент AudioSource
 
-    public void OnInitializationComplete()
-    {
-        Debug.Log("Complete");
-    }
+	void Start()
+	{
+		Advertisement.Initialize("5714317", false, this);
+		audioSource = GetComponent<AudioSource>(); // Получаем компонент AudioSource
+	}
+	public void ShowAd()
+	{
+		simpleRewardedAds.showRewarded(SecondLifeRewarded);
+		Advertisement.Show("Rewarded_Android", this);
+		audioSource.PlayOneShot(popSound); // Используем AudioSource для воспроизведения звука
+	}
 
-    public void OnInitializationFailed(UnityAdsInitializationError error, string message)
-    {
-    }
+	public void OnInitializationComplete()
+	{
+		Debug.Log("Complete");
+	}
 
-    public void OnUnityAdsAdLoaded(string placementId)
-    {
-    }
+	public void OnInitializationFailed(UnityAdsInitializationError error, string message)
+	{
+	}
 
-    public void OnUnityAdsFailedToLoad(string placementId, UnityAdsLoadError error, string message)
-    {
-    }
+	public void OnUnityAdsAdLoaded(string placementId)
+	{
+	}
 
-    public void OnUnityAdsShowClick(string placementId)
-    {
-    }
+	public void OnUnityAdsFailedToLoad(string placementId, UnityAdsLoadError error, string message)
+	{
+	}
 
-    public void OnUnityAdsShowComplete(string placementId, UnityAdsShowCompletionState showCompletionState)
-    {
-        if (placementId == "Rewarded_Android")
-        {
-        // Возобновить игру
-            PauseManager.ResumeGame();
-            rewardedAdsButton.SetActive(false);
-            deathPanel.SetActive(false);
-            Player.Instance.gameObject.SetActive(true);
-            Player.Instance.AddHealth(Player.Instance.maxHealth);
-        }
-    }
+	public void OnUnityAdsShowClick(string placementId)
+	{
+	}
 
-    public void OnUnityAdsShowFailure(string placementId, UnityAdsShowError error, string message)
-    {
-    }
+	public void OnUnityAdsShowComplete(string placementId, UnityAdsShowCompletionState showCompletionState)
+	{
+		if (placementId == "Rewarded_Android")
+		{
+			// Возобновить игру
+			PauseManager.ResumeGame();
+			rewardedAdsButton.SetActive(false);
+			deathPanel.SetActive(false);
+			Player.Instance.gameObject.SetActive(true);
+			Player.Instance.AddHealth(Player.Instance.maxHealth);
+		}
+	}
+					public void SecondLifeRewarded()
+						{PauseManager.ResumeGame();
+						rewardedAdsButton.SetActive(false);
+						deathPanel.SetActive(false);
+						Player.Instance.gameObject.SetActive(true);
+						Player.Instance.AddHealth(Player.Instance.maxHealth);
+						}
+		public void OnUnityAdsShowFailure(string placementId, UnityAdsShowError error, string message)
+		{
+		}
 
-    public void OnUnityAdsShowStart(string placementId)
-    {
-    }
+		public void OnUnityAdsShowStart(string placementId)
+		{
+		}
 }
