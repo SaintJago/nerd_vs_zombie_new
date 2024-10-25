@@ -3,6 +3,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.Localization.Settings;
 using UnityEngine.SceneManagement;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class WaveSpawner : MonoBehaviour
 {
@@ -23,46 +24,50 @@ public class WaveSpawner : MonoBehaviour
         public BossWave bossWave;
     }
 
-    [SerializeField] Wave[] waves;
-    [SerializeField] Transform[] spawnPoints;
-    [SerializeField] float timeBtwWaves;
+    [SerializeField] Wave[] waves; // Массив волн
+    [SerializeField] Transform[] spawnPoints; // Точки спавна
+    [SerializeField] float timeBtwWaves; // Время между волнами
     [SerializeField] AudioSource waveAudioSource;
-    Wave currentWave;
+    Wave currentWave; // Текущая волна
     [HideInInspector] public int currentWaveIndex;
     Transform player;
 
     bool isSpawnFinished = false;
-
     [SerializeField] TextMeshProUGUI waveText;
-
     bool isFreeTime = true;
     float curtimeBtwWaves;
 
     [SerializeField] GameObject spawnEffect;
-
     [SerializeField] AudioClip waveCompleteClip;
+    public GameObject CompletePanel;
+    [SerializeField] private string videoSceneName;
+    public float delayBeforeShowingPanel = 3.0f;
 
-    public GameObject CompletePanel; // Публичное поле для ссылки на CompletePanel
-    [SerializeField] private string videoSceneName; // New field for video scene name
-    public float delayBeforeShowingPanel = 3.0f; // Задержка перед показом панели (в секундах)
-
+    // Инициализация при старте
     private void Start()
     {
+        StartCoroutine(InitializeLocalization());
+    }
+
+    // Корутина для инициализации локализации
+    private IEnumerator InitializeLocalization()
+    {
+        // Ждём завершения инициализации системы локализации
+        yield return LocalizationSettings.InitializationOperation;
+        
         waveAudioSource = GetComponent<AudioSource>();
-
         player = Player.Instance.transform;
-
         curtimeBtwWaves = timeBtwWaves;
-
         UpdateText();
-
         StartCoroutine(CallNextWave(currentWaveIndex));
     }
 
+    // Обновление каждый кадр
     private void Update()
     {
         UpdateText();
 
+        // Проверка завершения волны
         if (isSpawnFinished && GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
         {
             isSpawnFinished = false;
@@ -79,24 +84,28 @@ public class WaveSpawner : MonoBehaviour
         }
     }
 
+    // Обновление текста волны
     void UpdateText()
     {
         if (isFreeTime)
         {
-            waveText.text = LocalizationSettings.StringDatabase.GetLocalizedStringAsync("UI", "Next wave").Result + ": " + ((int)(curtimeBtwWaves -= Time.deltaTime)).ToString();
+            var nextWaveOperation = LocalizationSettings.StringDatabase.GetLocalizedStringAsync("UI", "Next wave");
+            waveText.text = $"{nextWaveOperation.Result}: {((int)(curtimeBtwWaves -= Time.deltaTime)).ToString()}";
         }
         else
         {
-            waveText.text = LocalizationSettings.StringDatabase.GetLocalizedStringAsync("UI", "Current wave").Result + ": " + (currentWaveIndex + 1).ToString();
+            var currentWaveOperation = LocalizationSettings.StringDatabase.GetLocalizedStringAsync("UI", "Current wave");
+            waveText.text = $"{currentWaveOperation.Result}: {(currentWaveIndex + 1).ToString()}";
         }
     }
 
+    // Запуск следующей волны
     IEnumerator CallNextWave(int waveIndex)
     {
         curtimeBtwWaves = timeBtwWaves;
-
         isFreeTime = true;
-        // Воспроизвести звук завершения волны
+
+        // Воспроизведение звука завершения волны
         if (waveAudioSource != null && waveCompleteClip != null)
         {
             waveAudioSource.PlayOneShot(waveCompleteClip);
@@ -107,10 +116,12 @@ public class WaveSpawner : MonoBehaviour
         StartCoroutine(SpawnWave(waveIndex));
     }
 
+    // Спавн врагов в волне
     IEnumerator SpawnWave(int waveIndex)
     {
         currentWave = waves[waveIndex];
 
+        // Спавн обычных врагов
         for (int i = 0; i < currentWave.enemyCount; i++)
         {
             if (player == null) yield break;
@@ -124,6 +135,7 @@ public class WaveSpawner : MonoBehaviour
             yield return new WaitForSeconds(currentWave.timeBtwSpawn);
         }
 
+        // Спавн боссов
         for (int i = 0; i < currentWave.bossWave.count; i++)
         {
             if (player == null) yield break;
@@ -140,19 +152,17 @@ public class WaveSpawner : MonoBehaviour
         isSpawnFinished = true;
     }
 
+    // Показ панели завершения с задержкой
     IEnumerator ShowCompletePanelWithDelay()
     {
         yield return new WaitForSeconds(delayBeforeShowingPanel);
 
-        // Check if video scene name is provided
         if (!string.IsNullOrEmpty(videoSceneName))
         {
-            // Load the video scene
             SceneManager.LoadScene(videoSceneName);
         }
         else
         {
-            // If no video scene is specified, show the complete panel as before
             CompletePanel.SetActive(true);
             PauseManager.PauseGame();
         }
