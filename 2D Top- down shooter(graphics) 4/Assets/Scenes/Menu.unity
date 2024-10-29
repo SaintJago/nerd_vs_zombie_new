@@ -730,7 +730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51b5d3e9d150bba47b8392ed89f973b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _androidAppKey: 
+  _androidAppKey: 1ff21a8cd
   _appleAppKey: 
 --- !u!4 &142825522
 Transform:
@@ -14742,7 +14742,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.90153354, y: 0}
   m_AnchorMax: {x: 0.90153354, y: 0.07180332}
-  m_AnchoredPosition: {x: 1, y: 105.50011}
+  m_AnchoredPosition: {x: 1, y: 105.50009}
   m_SizeDelta: {x: 143.849, y: 38.593018}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1726920550303935765
