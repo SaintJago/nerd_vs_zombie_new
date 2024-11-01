@@ -143,6 +143,14 @@ MonoBehaviour:
     m_Key: game_name
     m_Metadata:
       m_Items: []
+  - m_Id: 109405253429485568
+    m_Key: privat_policy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 109411233554882560
+    m_Key: skip
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

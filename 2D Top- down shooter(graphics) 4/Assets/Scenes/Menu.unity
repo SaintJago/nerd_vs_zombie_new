@@ -8881,6 +8881,7 @@ GameObject:
   - component: {fileID: 1227175696}
   - component: {fileID: 1227175695}
   - component: {fileID: 1227175697}
+  - component: {fileID: 1227175698}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -9002,7 +9003,7 @@ MonoBehaviour:
     questions regarding privacy while using the Application, or have questions about
     the practices, please contact the Service Provider via email at wtfoxgames@gmail.com.\r\n\r\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b11009fa6f76863439a9a601d544d7e0, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -9066,7 +9067,7 @@ MonoBehaviour:
   m_margin: {x: 25, y: 50, z: 25, w: 50}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1227175696
@@ -9091,6 +9092,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!114 &1227175698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227175693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:4acf29c97358d2a4faae4fda0af064eb
+    m_TableEntryReference:
+      m_KeyId: 109405253429485568
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1227175695}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  references:
+    version: 1
 --- !u!1 &1252089691
 GameObject:
   m_ObjectHideFlags: 0
@@ -15400,7 +15440,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.90153354, y: 0}
   m_AnchorMax: {x: 0.90153354, y: 0.07180332}
-  m_AnchoredPosition: {x: 1, y: 105.499954}
+  m_AnchoredPosition: {x: 1, y: 105.49989}
   m_SizeDelta: {x: 143.849, y: 38.593018}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1726920550303935765
