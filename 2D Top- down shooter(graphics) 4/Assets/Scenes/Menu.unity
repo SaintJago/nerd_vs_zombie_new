@@ -747,6 +747,7 @@ GameObject:
   m_Component:
   - component: {fileID: 142825522}
   - component: {fileID: 142825521}
+  - component: {fileID: 142825523}
   m_Layer: 0
   m_Name: AdsManager
   m_TagString: Untagged
@@ -782,6 +783,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &142825523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142825520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0a377f5e331b3e41ab3c2a4cd4673c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &161237250
 GameObject:
   m_ObjectHideFlags: 0
@@ -7088,8 +7101,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.22575903}
   m_AnchorMax: {x: 0.5, y: 0.5665181}
-  m_AnchoredPosition: {x: -626, y: 253.50844}
-  m_SizeDelta: {x: 1294, y: 320.7175}
+  m_AnchoredPosition: {x: -626, y: 246.95673}
+  m_SizeDelta: {x: 1294, y: 325.86795}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1023013311
 MonoBehaviour:
@@ -9714,6 +9727,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 142825523}
+        m_TargetAssemblyTypeName: InterstitialAds, Assembly-CSharp
+        m_MethodName: showAds
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1271460257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10823,6 +10848,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: LevelSelectionMenuManager, Assembly-CSharp
         m_MethodName: onClickLevel
         m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 142825523}
+        m_TargetAssemblyTypeName: InterstitialAds, Assembly-CSharp
+        m_MethodName: showAds
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -15440,7 +15477,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.90153354, y: 0}
   m_AnchorMax: {x: 0.90153354, y: 0.07180332}
-  m_AnchoredPosition: {x: 1, y: 105.49989}
+  m_AnchoredPosition: {x: 1, y: 105.49983}
   m_SizeDelta: {x: 143.849, y: 38.593018}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1726920550303935765

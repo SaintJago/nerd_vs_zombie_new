@@ -1353,6 +1353,7 @@ GameObject:
   - component: {fileID: 185805450}
   - component: {fileID: 185805449}
   - component: {fileID: 185805451}
+  - component: {fileID: 185805452}
   m_Layer: 0
   m_Name: AdsManager
   m_TagString: Untagged
@@ -1374,7 +1375,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rewardedAdsButton: {fileID: 898456132}
   deathPanel: {fileID: 299986993}
-  simpleRewardedAds: {fileID: 0}
+  simpleRewardedAds: {fileID: 185805452}
   popSound: {fileID: 8300000, guid: 95a003de881e40c4bb580f564ae8f181, type: 3}
 --- !u!4 &185805450
 Transform:
@@ -1486,6 +1487,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &185805452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185805448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 304ec4abc00938d45b9f005e7b8f5788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manualInit: 0
 --- !u!1 &204746683
 GameObject:
   m_ObjectHideFlags: 0
