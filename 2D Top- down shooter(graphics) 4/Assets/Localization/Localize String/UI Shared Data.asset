@@ -151,6 +151,10 @@ MonoBehaviour:
     m_Key: skip
     m_Metadata:
       m_Items: []
+  - m_Id: 109819936103849984
+    m_Key: select_level
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

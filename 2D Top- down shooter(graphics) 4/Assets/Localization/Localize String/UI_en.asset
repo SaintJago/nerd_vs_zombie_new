@@ -229,7 +229,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 109411233554882560
-    m_Localized: skip
+    m_Localized: Skip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 109819936103849984
+    m_Localized: Select level
     m_Metadata:
       m_Items: []
   references:
