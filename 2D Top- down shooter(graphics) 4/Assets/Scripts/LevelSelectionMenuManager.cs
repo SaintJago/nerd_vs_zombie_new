@@ -10,7 +10,7 @@ public class LevelSelectionMenuManager : MonoBehaviour
     public static int currLevel;
     public static int unlockedLevels;
 
-    public void onClickLevel(int levelNum)
+    public void onClickLevel(int levelNum) 
     {
         currLevel = levelNum;
         SceneManager.LoadScene("Level" + (levelNum + 1));
@@ -23,7 +23,7 @@ public class LevelSelectionMenuManager : MonoBehaviour
 
         for (int i = 0; i < levelObjects.Length; i++)
         {
-            if (unlockedLevels >= i)
+            if(unlockedLevels >= i)
             {
                 levelObjects[i].levelButton.interactable = true;
             }

@@ -12,10 +12,9 @@ public class MainMenu : MonoBehaviour
     public GameObject languageButtonPrefab; // Префаб кнопки языка
     public GameObject LevelSelectMenu; // Панель для выбора уровней
 
-    [Header("Exit Submenu")]
-    public GameObject exitSubMenu; // Добавленное поле для суб меню выхода
 
     private string languageKey = "SelectedLanguage";
+
     private Dictionary<string, string> localizedLanguageNames = new Dictionary<string, string>
     {
         {"en", "English"},
@@ -28,6 +27,8 @@ public class MainMenu : MonoBehaviour
         // При запуске игры устанавливаем язык из сохраненных настроек
         string savedLanguage = PlayerPrefs.GetString(languageKey, "en");
         ChangeLanguage(savedLanguage);
+
+    
     }
 
     public void OpenLevelSelectMenu()
@@ -37,24 +38,7 @@ public class MainMenu : MonoBehaviour
 
     public void ExitGame()
     {
-        // Вместо прямого закрытия игры, открываем суб меню подтверждения
-        exitSubMenu.SetActive(true);
-
-    }
-
-    public void ExitGameConfirmed()
-    {
-       
-        // Метод для подтверждения выхода из игры
         Application.Quit();
-        
-
-    }
-
-    public void CloseExitSubMenu()
-    {
-        // Метод для закрытия суб меню выхода
-        exitSubMenu.SetActive(false);
     }
 
     public void OpenLanguagePanel()
@@ -63,6 +47,7 @@ public class MainMenu : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
+
         foreach (var locale in LocalizationSettings.AvailableLocales.Locales)
         {
             GameObject button = Instantiate(languageButtonPrefab, languagePanel.transform);
@@ -71,6 +56,7 @@ public class MainMenu : MonoBehaviour
             button.GetComponentInChildren<TextMeshProUGUI>().text = languageName;
             button.GetComponent<Button>().onClick.AddListener(() => ChangeLanguage(locale.Identifier.Code));
         }
+
         languagePanel.SetActive(true);
     }
 
@@ -80,6 +66,7 @@ public class MainMenu : MonoBehaviour
         if (locale != null)
         {
             LocalizationSettings.SelectedLocale = locale;
+
             // Сохраняем выбранный язык в PlayerPrefs
             PlayerPrefs.SetString(languageKey, localeIdentifier);
             PlayerPrefs.Save();

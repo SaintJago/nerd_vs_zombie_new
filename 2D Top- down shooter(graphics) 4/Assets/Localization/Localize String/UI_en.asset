@@ -149,7 +149,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 109405253429485568
-    m_Localized: "Privacy Policy\r\n\nThis privacy policy is applicable to the Nerd
+    m_Localized: "Privacy Policy\r\nThis privacy policy is applicable to the Nerd
       vs zombie app (hereinafter referred to as \"Application\") for mobile devices,
       which was developed by (hereinafter referred to as \"Service Provider\") as
       a a Free service. This service is provided \"AS IS\".\r\n\r\n\r\nWhat information
@@ -234,6 +234,28 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 109819936103849984
     m_Localized: Select level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 110588413337001984
+    m_Localized: "\n\n\n\n\n\n\n\n\n\nIdea & development: \nAka Santiago, Yevhen
+      Stepanov\r\n\n\nLead Programming & Gameplay Designer: \nAka Santiago\r\n\r\nArt
+      & Visual Design: \nYevhen Stepanov\r\n\r\nMotion Comic Editor: \nMarina Stepanova\r\n\r\n\rMusic:
+      https://freesound.org/\r\n\r\n\rMenu: \r\nDeep Tesnsion 01.wav \nby Metamorphose
+      -- https://freesound.org/s/703422/ -- \nLicense: Creative Commons 0\r\n\r\nLevel1,
+      Level2: \r\nHard Game Music [115bpm] \nby Seth_Makes_Sounds -- https://freesound.org/s/713123/
+      -- License: Creative Commons 0\r\n\r\nLevel3, Level4:\r\nTrapbeat - Wav mixdown
+      \nby Robhog -- https://freesound.org/s/685318/ -- \nLicense: Creative Commons
+      0\r\n\r\nLevel5, Level6:\r\nmoodyBeat.wav (preview) \nby Seth_Makes_Sounds
+      -- https://freesound.org/s/699381/ -- License: Creative Commons 0\r\n\r\nLevel7,
+      Level8:\r\nDeep Tesnsion 02.wav \nby Metamorphose -- https://freesound.org/s/703480/
+      -- \nLicense: Creative Commons 0\r\n\r\nLevel9, Level10:\r\nGlob Battle [music]
+      \nby Seth_Makes_Sounds -- https://freesound.org/s/711442/ -- License: Creative
+      Commons 0\r\n\r\nIntro Scenes:\r\nA Music Box With A Tense Atmosphere \nby
+      UNIVERSFIELD -- https://freesound.org/s/702865/ -- \nLicense: Attribution 4.0\r\n\r\nFollow
+      the demons-demo.wav \nby Merrick079 -- https://freesound.org/s/571626/ -- \nLicense:
+      Creative Commons 0\r\n\r\nXmas Jam 2 .mp3 \nby NERDtasticBEATS -- https://freesound.org/s/666572/
+      -- \nLicense: Creative Commons 0\r\n\r\nMerry Widow music box 08.mp3 \nby TRP
+      -- https://freesound.org/s/575214/ -- \nLicense: Creative Commons 0\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n"
     m_Metadata:
       m_Items: []
   references:

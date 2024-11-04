@@ -54,7 +54,7 @@ public class WaveSpawner : MonoBehaviour
     {
         // Ждём завершения инициализации системы локализации
         yield return LocalizationSettings.InitializationOperation;
-
+        
         waveAudioSource = GetComponent<AudioSource>();
         player = Player.Instance.transform;
         curtimeBtwWaves = timeBtwWaves;
