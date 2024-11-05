@@ -30,7 +30,7 @@ public class Shop : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        DeleteShopData(); // Удалить все сохраненные данные магазина
+        // DeleteShopData() больше не вызывается здесь
     }
 
     private void Start()
@@ -144,13 +144,14 @@ public class Shop : MonoBehaviour
                 // Если магазин открыт, закрываем его
                 CloseShop();
             }
-            else
+            else if (!soundMenu.activeSelf)
             {
-                // Если магазин закрыт, открываем его
+                // Если магазин закрыт и меню звука не активно, открываем магазин
                 OpenShop();
             }
         }
     }
+
     // Проверить состояние кнопок
     void Check()
     {
@@ -186,6 +187,13 @@ public class Shop : MonoBehaviour
         {
             MarkAsBought(index);
             Player.Instance.AddMoney(-prices[index]);
+            
+            // Воспроизводим звук успешной покупки
+            if (succesBuyClip != null)
+            {
+                SoundManager.Instance.PlayerSound(succesBuyClip);
+            }
+            
             Check();
         }
     }
@@ -195,9 +203,13 @@ public class Shop : MonoBehaviour
     {
         buyButtons[index].interactable = false;
         PlayerPrefs.SetInt("Position" + index, 1);
-        PlayerPrefs.Save(); // Сохранить изменения
+        PlayerPrefs.Save(); // Сразу сохраняем изменения
 
-        if (index == 2 && buySeconPosition != null) buySeconPosition.Invoke();
+        if (index == 2 && buySeconPosition != null)
+        {
+            buySeconPosition.Invoke();
+        }
+
         if (index == 4 && buySeconPosition != null)
         {
             buySeconPosition.Invoke();
@@ -216,15 +228,23 @@ public class Shop : MonoBehaviour
         }
     }
 
-    // Удалить данные магазина
+    // Метод для удаления данных магазина (использовать только при разработке)
+    [ContextMenu("Reset Shop Data")]
     void DeleteShopData()
     {
         for (int i = 0; i < buyButtons.Length; i++)
         {
             PlayerPrefs.DeleteKey("Position" + i);
         }
+        PlayerPrefs.Save();
+        Debug.Log("Shop data has been reset");
     }
 
-    [ContextMenu("Delete Player Prefs")]
-    void DeletePlayerPrefs() => PlayerPrefs.DeleteAll();
+    // Удалить все данные PlayerPrefs (использовать только при разработке)
+    [ContextMenu("Delete All PlayerPrefs")]
+    void DeletePlayerPrefs()
+    {
+        PlayerPrefs.DeleteAll();
+        Debug.Log("All PlayerPrefs have been deleted");
+    }
 }

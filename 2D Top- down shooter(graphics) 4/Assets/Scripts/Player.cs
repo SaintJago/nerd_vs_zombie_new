@@ -89,6 +89,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        // Инициализация компонентов
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         spR = GetComponent<SpriteRenderer>();
@@ -98,6 +99,10 @@ public class Player : MonoBehaviour
         UpdateHealthUI();
         droneInstance = Instantiate(dronePrefab, transform.position, Quaternion.identity);
         droneInstance.SetActive(false);
+
+        // Загрузка количества монет из PlayerPrefs при старте игры
+        currentMoney = PlayerPrefs.GetInt("PlayerMoney", 0); // Если данных нет, вернется 0
+        coinsText.text = "Coins: " + currentMoney.ToString();
     }
 
     void Update()
@@ -214,7 +219,11 @@ public class Player : MonoBehaviour
 
     public void AddMoney(int value)
     {
+        // Увеличиваем количество монет и сохраняем его в PlayerPrefs
         currentMoney += value;
+        PlayerPrefs.SetInt("PlayerMoney", currentMoney); // Сохраняем количество монет в PlayerPrefs
+
+        // Обновляем отображение текста с монетами
         LocalizationSettings.StringDatabase.GetLocalizedStringAsync("UI", "Coins").Completed += op =>
         {
             if (op.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded)
