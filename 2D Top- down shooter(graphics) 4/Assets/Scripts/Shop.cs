@@ -9,11 +9,13 @@ using UnityEngine.SceneManagement;
 
 public class Shop : MonoBehaviour
 {
-    [SerializeField] Button[] buyButtons; // Кнопки покупки
-    [SerializeField] TextMeshProUGUI[] boughtTexts; // Текстовые поля для отображения состояния покупки
-    [SerializeField] int[] prices; // Цены на товары
+    [SerializeField] Button[] buyButtons;
+    [SerializeField] TextMeshProUGUI[] boughtTexts;
+    [SerializeField] int[] prices;
+    [SerializeField] GameObject shopPanel;
 
-    [SerializeField] GameObject shopPanel; // Панель магазина
+    [SerializeField] GameObject virtualJoystick; // Ссылка на виртуальный джойстик
+    [SerializeField] GameObject actionButtons; // Ссылка на кнопки действий
 
     public delegate void BuySeconPosition();
     public event BuySeconPosition buySeconPosition;
@@ -25,12 +27,11 @@ public class Shop : MonoBehaviour
 
     [SerializeField] Player player;
 
-    [SerializeField] AudioClip popSound, succesBuyClip; // Звуки
+    [SerializeField] AudioClip popSound, succesBuyClip;
 
     private void Awake()
     {
         Instance = this;
-        // DeleteShopData() больше не вызывается здесь
     }
 
     private void Start()
@@ -38,12 +39,40 @@ public class Shop : MonoBehaviour
         InitializeShop();
     }
 
-    // Закрыть магазин
     private void CloseShop()
     {
         isShopOpen = false;
         shopPanel.SetActive(false);
-        Resume(); // Снять с паузы
+        
+        // Показываем контроллер обратно
+        virtualJoystick.SetActive(true);
+        actionButtons.SetActive(true);
+
+        Resume();
+    }
+
+    public void OpenShop()
+    {
+        shopPanel.SetActive(true);
+        Check();
+        SoundManager.Instance.PlayerSound(popSound);
+        
+        // Скрываем контроллер
+        virtualJoystick.SetActive(false);
+        actionButtons.SetActive(false);
+
+        PauseManager.PauseGame();
+        Cursor.visible = true;
+
+        if (isShopOpen)
+        {
+            CloseShop();
+        }
+        else
+        {
+            isShopOpen = true;
+            shopPanel.SetActive(true);
+        }
     }
 
     private void Update()
@@ -51,7 +80,6 @@ public class Shop : MonoBehaviour
         HandleShopPanelToggle();
     }
 
-    // Нажатие кнопки звука
     public void SoundButtonPressed()
     {
         if (soundMenu.activeSelf && !shopPanel.activeSelf)
@@ -69,57 +97,27 @@ public class Shop : MonoBehaviour
         }
     }
 
-    // Открыть меню звука
     public void OpenSoundMenu()
     {
         soundMenu.SetActive(true);
-        // Остановка времени
         PauseManager.PauseGame();
     }
 
-    // Открыть магазин
-    public void OpenShop()
-    {
-        shopPanel.SetActive(true);
-        Check();
-        SoundManager.Instance.PlayerSound(popSound);
-        // Остановка времени
-        PauseManager.PauseGame();
-        Cursor.visible = true;
-
-        if (isShopOpen)
-        {
-            // Магазин уже открыт, закрываем его
-            CloseShop();
-        }
-        else
-        {
-            // Открываем магазин
-            isShopOpen = true;
-            shopPanel.SetActive(true);
-        }
-    }
-
-    // Снять с паузы
     public void Resume()
     {
         shopPanel.SetActive(false);
         soundMenu.SetActive(false);
-        // Возобновить игру
         PauseManager.ResumeGame();
-        isShopOpen = false; // Сбрасываем флаг открытости магазина
+        isShopOpen = false;
     }
 
-    // Загрузить меню
     public void LoadMenu()
     {
         StopAllCoroutines();
-        // Возобновить игру
         PauseManager.ResumeGame();
         SceneManager.LoadScene("Menu");
     }
 
-    // Инициализировать магазин
     void InitializeShop()
     {
         for (int i = 0; i < buyButtons.Length; i++)
@@ -134,25 +132,21 @@ public class Shop : MonoBehaviour
         Check();
     }
 
-    // Обработчик переключения панели магазина
     void HandleShopPanelToggle()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isShopOpen)
             {
-                // Если магазин открыт, закрываем его
                 CloseShop();
             }
             else if (!soundMenu.activeSelf)
             {
-                // Если магазин закрыт и меню звука не активно, открываем магазин
                 OpenShop();
             }
         }
     }
 
-    // Проверить состояние кнопок
     void Check()
     {
         for (int i = 0; i < buyButtons.Length; i++)
@@ -172,7 +166,6 @@ public class Shop : MonoBehaviour
         }
     }
 
-    // Установить состояние кнопки
     async void SetButtonState(int index, bool interactable, string key)
     {
         buyButtons[index].interactable = interactable;
@@ -180,7 +173,6 @@ public class Shop : MonoBehaviour
         boughtTexts[index].text = await op.Task;
     }
 
-    // Купить товар
     public void Buy(int index)
     {
         if (Player.Instance.currentMoney >= prices[index])
@@ -188,7 +180,6 @@ public class Shop : MonoBehaviour
             MarkAsBought(index);
             Player.Instance.AddMoney(-prices[index]);
             
-            // Воспроизводим звук успешной покупки
             if (succesBuyClip != null)
             {
                 SoundManager.Instance.PlayerSound(succesBuyClip);
@@ -198,12 +189,11 @@ public class Shop : MonoBehaviour
         }
     }
 
-    // Отметить товар как купленный
     void MarkAsBought(int index)
     {
         buyButtons[index].interactable = false;
         PlayerPrefs.SetInt("Position" + index, 1);
-        PlayerPrefs.Save(); // Сразу сохраняем изменения
+        PlayerPrefs.Save();
 
         if (index == 2 && buySeconPosition != null)
         {
@@ -214,11 +204,9 @@ public class Shop : MonoBehaviour
         {
             buySeconPosition.Invoke();
 
-            // Проверяем, что у игрока есть дрон
             if (PlayerPrefs.GetInt("Position4") == 1)
             {
                 Player.Instance.droneInstance.SetActive(true);
-                // Устанавливаем цель для дрона
                 DroneMovement droneMovement = Player.Instance.droneInstance.GetComponent<DroneMovement>();
                 if (droneMovement != null)
                 {
@@ -228,7 +216,6 @@ public class Shop : MonoBehaviour
         }
     }
 
-    // Метод для удаления данных магазина (использовать только при разработке)
     [ContextMenu("Reset Shop Data")]
     void DeleteShopData()
     {
@@ -240,7 +227,6 @@ public class Shop : MonoBehaviour
         Debug.Log("Shop data has been reset");
     }
 
-    // Удалить все данные PlayerPrefs (использовать только при разработке)
     [ContextMenu("Delete All PlayerPrefs")]
     void DeletePlayerPrefs()
     {
