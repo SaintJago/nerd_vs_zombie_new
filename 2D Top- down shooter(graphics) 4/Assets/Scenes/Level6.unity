@@ -259,7 +259,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2328309163462712586, guid: b5a6debd5a0c85d4e93bbe4496975868, type: 3}
   m_PrefabInstance: {fileID: 33130694}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 33130697}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -268,6 +268,11 @@ MonoBehaviour:
 --- !u!224 &33130696 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2328309163462712587, guid: b5a6debd5a0c85d4e93bbe4496975868, type: 3}
+  m_PrefabInstance: {fileID: 33130694}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &33130697 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2328309163462712584, guid: b5a6debd5a0c85d4e93bbe4496975868, type: 3}
   m_PrefabInstance: {fileID: 33130694}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &49856220
@@ -1550,6 +1555,7 @@ GameObject:
   - component: {fileID: 185805450}
   - component: {fileID: 185805449}
   - component: {fileID: 185805451}
+  - component: {fileID: 185805452}
   m_Layer: 0
   m_Name: AdsManager
   m_TagString: Untagged
@@ -1571,7 +1577,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rewardedAdsButton: {fileID: 898456132}
   deathPanel: {fileID: 299986993}
-  simpleRewardedAds: {fileID: 0}
+  simpleRewardedAds: {fileID: 185805452}
   popSound: {fileID: 8300000, guid: 95a003de881e40c4bb580f564ae8f181, type: 3}
 --- !u!4 &185805450
 Transform:
@@ -1683,6 +1689,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &185805452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185805448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 304ec4abc00938d45b9f005e7b8f5788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manualInit: 0
 --- !u!1 &204746683
 GameObject:
   m_ObjectHideFlags: 0
@@ -1748,6 +1767,8 @@ MonoBehaviour:
   - {fileID: 94171486}
   prices: 6400000096000000fa0000005e01000001000000
   shopPanel: {fileID: 1146234494}
+  virtualJoystick: {fileID: 705430985}
+  actionButtons: {fileID: 33130697}
   soundButton: {fileID: 1301934232}
   soundMenu: {fileID: 491959020}
   player: {fileID: 1468479170}
@@ -5392,7 +5413,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8135886326569738823, guid: 56fae09712773584fb63896d473a98ee, type: 3}
   m_PrefabInstance: {fileID: 705430984}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 705430985}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba0d0e7a039f526499c356a3c5cd6d3f, type: 3}
@@ -7174,6 +7195,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56fae09712773584fb63896d473a98ee, type: 3}
+--- !u!1 &705430985 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8135886326569738825, guid: 56fae09712773584fb63896d473a98ee, type: 3}
+  m_PrefabInstance: {fileID: 705430984}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &713872135
 GameObject:
   m_ObjectHideFlags: 0
