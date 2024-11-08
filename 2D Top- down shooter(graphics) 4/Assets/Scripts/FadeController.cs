@@ -4,23 +4,23 @@ using UnityEngine.UI;
 
 public class FadeController : MonoBehaviour
 {
-    public CanvasGroup fadePanel; // Ссылка на CanvasGroup панели затемнения
-    public float fadeDuration = 1f; // Продолжительность исчезновения в секундах
+    public CanvasGroup fadePanel; // РЎСЃС‹Р»РєР° РЅР° CanvasGroup РїР°РЅРµР»Рё Р·Р°С‚РµРјРЅРµРЅРёСЏ
+    public float fadeDuration = 1f; // РџСЂРѕРґРѕР»Р¶РёС‚РµР»СЊРЅРѕСЃС‚СЊ Р·Р°С‚РµРјРЅРµРЅРёСЏ РІ СЃРµРєСѓРЅРґР°С…
 
     private void Start()
     {
-        // Проверяем наличие компонента fadePanel
+        // РџСЂРѕРІРµСЂСЏРµРј РЅР°Р»РёС‡РёРµ РєРѕРјРїРѕРЅРµРЅС‚Р° fadePanel
         if (fadePanel == null)
         {
             Debug.LogError("Fade Panel not assigned! Please assign a CanvasGroup component.");
             return;
         }
 
-        // Устанавливаем начальную непрозрачность панели
+        // РРЅРёС†РёР°Р»РёР·РёСЂСѓРµРј РЅР°С‡Р°Р»СЊРЅС‹Рµ Р·РЅР°С‡РµРЅРёСЏ РїР°РЅРµР»Рё
         fadePanel.alpha = 1f;
         fadePanel.gameObject.SetActive(true);
 
-        // Запускаем плавное исчезновение панели
+        // Р—Р°РїСѓСЃРєР°РµРј РєРѕСЂСѓС‚РёРЅСѓ РёСЃС‡РµР·РЅРѕРІРµРЅРёСЏ РїР°РЅРµР»Рё
         StartCoroutine(FadeOutPanel());
     }
 
@@ -28,7 +28,7 @@ public class FadeController : MonoBehaviour
     {
         float elapsedTime = 0f;
 
-        // Постепенно уменьшаем прозрачность до 0
+        // РџРѕСЃС‚РµРїРµРЅРЅРѕРµ СѓРјРµРЅСЊС€РµРЅРёРµ РїСЂРѕР·СЂР°С‡РЅРѕСЃС‚Рё РґРѕ 0
         while (elapsedTime < fadeDuration)
         {
             elapsedTime += Time.deltaTime;
@@ -36,8 +36,24 @@ public class FadeController : MonoBehaviour
             yield return null;
         }
 
-        // Убеждаемся, что панель полностью прозрачная и деактивируем её
+        // РЈР±РµР¶РґР°РµРјСЃСЏ, С‡С‚Рѕ РїР°РЅРµР»СЊ РїРѕР»РЅРѕСЃС‚СЊСЋ РїСЂРѕР·СЂР°С‡РЅР° Рё РІС‹РєР»СЋС‡Р°РµРј РµС‘
         fadePanel.alpha = 0f;
         fadePanel.gameObject.SetActive(false);
+    }
+
+    // Р”РѕР±Р°РІРёРј РјРµС‚РѕРґ РґР»СЏ РїРѕСЏРІР»РµРЅРёСЏ РїР°РЅРµР»Рё, РµСЃР»Рё РѕРЅ РІР°Рј РїРѕРЅР°РґРѕР±РёС‚СЃСЏ
+    public IEnumerator FadeInPanel()
+    {
+        fadePanel.gameObject.SetActive(true);
+        float elapsedTime = 0f;
+
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            fadePanel.alpha = Mathf.Clamp01(elapsedTime / fadeDuration);
+            yield return null;
+        }
+
+        fadePanel.alpha = 1f;
     }
 }

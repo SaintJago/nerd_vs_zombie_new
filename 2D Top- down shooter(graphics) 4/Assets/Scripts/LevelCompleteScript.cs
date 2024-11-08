@@ -7,8 +7,8 @@ public class LevelCompleteScript : MonoBehaviour
 {
     private const string SHOW_LEVEL_SELECT_KEY = "ShouldShowLevelSelect";
 
-    [SerializeField] private CanvasGroup fadePanel; // Панель затемнения
-    [SerializeField] private float fadeDuration = 1f; // Длительность эффекта затемнения
+    [SerializeField] private CanvasGroup fadePanel; 
+    [SerializeField] private float fadeDuration = 1f; 
 
     public void OnLevelComplete()
     {
@@ -25,7 +25,6 @@ public class LevelCompleteScript : MonoBehaviour
         PlayerPrefs.SetInt(SHOW_LEVEL_SELECT_KEY, 1);
         PlayerPrefs.Save();
 
-        // Начало затемнения перед загрузкой меню
         StartCoroutine(FadeOutAndLoadMenu());
     }
 
