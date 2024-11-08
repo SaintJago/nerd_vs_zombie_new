@@ -2063,7 +2063,7 @@ MonoBehaviour:
   spawnEffect: {fileID: 7101206128171277540, guid: f854693283e53d648bd768b33e9bd440, type: 3}
   waveCompleteClip: {fileID: 8300000, guid: 303e779b5859703449ece38d467b7205, type: 3}
   CompletePanel: {fileID: 2192763063961972873}
-  videoSceneName: ComicEnd
+  videoSceneName: Level11
   delayBeforeShowingPanel: 3
   fadePanel: {fileID: 853312037}
   fadeDuration: 1
