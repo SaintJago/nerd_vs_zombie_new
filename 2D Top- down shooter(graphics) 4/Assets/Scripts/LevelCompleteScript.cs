@@ -1,14 +1,14 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using BayatGames.SaveGameFree;
 using System.Collections;
 
 public class LevelCompleteScript : MonoBehaviour
 {
     private const string SHOW_LEVEL_SELECT_KEY = "ShouldShowLevelSelect";
+    private const string UNLOCKED_LEVELS_KEY = "unlockedLevels";
 
-    [SerializeField] private CanvasGroup fadePanel; 
-    [SerializeField] private float fadeDuration = 1f; 
+    [SerializeField] private CanvasGroup fadePanel;
+    [SerializeField] private float fadeDuration = 1f;
 
     public void OnLevelComplete()
     {
@@ -18,7 +18,8 @@ public class LevelCompleteScript : MonoBehaviour
         if (LevelSelectionMenuManager.currLevel == LevelSelectionMenuManager.unlockedLevels)
         {
             LevelSelectionMenuManager.unlockedLevels++;
-            SaveGame.Save<int>("unlockedLevels", LevelSelectionMenuManager.unlockedLevels);
+            PlayerPrefs.SetInt(UNLOCKED_LEVELS_KEY, LevelSelectionMenuManager.unlockedLevels);
+            PlayerPrefs.Save();
             Debug.Log($"Unlocked new level. Total unlocked levels: {LevelSelectionMenuManager.unlockedLevels}");
         }
 

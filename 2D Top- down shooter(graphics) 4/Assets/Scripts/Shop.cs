@@ -9,202 +9,199 @@ using UnityEngine.SceneManagement;
 
 public class Shop : MonoBehaviour
 {
-    [SerializeField] Button[] buyButtons;
-    [SerializeField] TextMeshProUGUI[] boughtTexts;
-    [SerializeField] int[] prices;
-    [SerializeField] GameObject shopPanel;
+		[SerializeField] Button[] buyButtons;
+		[SerializeField] TextMeshProUGUI[] boughtTexts;
+		[SerializeField] int[] prices;
+		[SerializeField] GameObject shopPanel;
 
-    [SerializeField] GameObject virtualJoystick; // Ссылка на виртуальный джойстик
-    [SerializeField] GameObject actionButtons; // Ссылка на кнопки действий
 
-    public delegate void BuySeconPosition();
-    public event BuySeconPosition buySeconPosition;
+		public delegate void BuySeconPosition();
+		public event BuySeconPosition buySeconPosition;
 
-    public static Shop Instance;
-    public GameObject soundButton;
-    public GameObject soundMenu;
-    private bool isShopOpen;
+		public static Shop Instance;
+		public GameObject soundButton;
+		public GameObject soundMenu;
+		private bool isShopOpen;
 
-    [SerializeField] Player player;
+		[SerializeField] Player player;
+		[SerializeField] private GameObject dronePrefab; // Add this at the top of Shop class
 
-    [SerializeField] AudioClip popSound, succesBuyClip;
 
-    private void Awake()
-    {
-        Instance = this;
-    }
 
-    private void Start()
-    {
-        InitializeShop();
-    }
+		[SerializeField] AudioClip popSound, succesBuyClip;
 
-    private void CloseShop()
-    {
-        isShopOpen = false;
-        shopPanel.SetActive(false);
-        
-        // Показываем контроллер обратно
-        virtualJoystick.SetActive(true);
-        actionButtons.SetActive(true);
+		private void Awake()
+		{
+				Instance = this;
+		}
 
-        Resume();
-    }
+		private void Start()
+		{
+				InitializeShop();
+		}
 
-    public void OpenShop()
-    {
-        shopPanel.SetActive(true);
-        Check();
-        SoundManager.Instance.PlayerSound(popSound);
-        
-        // Скрываем контроллер
-        virtualJoystick.SetActive(false);
-        actionButtons.SetActive(false);
+		private void CloseShop()
+		{
+				isShopOpen = false;
+				shopPanel.SetActive(false);
+				
+				// Показываем контроллер обратно
 
-        PauseManager.PauseGame();
-        Cursor.visible = true;
+				Resume();
+		}
 
-        if (isShopOpen)
-        {
-            CloseShop();
-        }
-        else
-        {
-            isShopOpen = true;
-            shopPanel.SetActive(true);
-        }
-    }
+		public void OpenShop()
+		{
+				shopPanel.SetActive(true);
+				Check();
+				SoundManager.Instance.PlayerSound(popSound);
+				
+				// Скрываем контроллер
 
-    private void Update()
-    {
-        HandleShopPanelToggle();
-    }
+				PauseManager.PauseGame();
+				Cursor.visible = true;
 
-    public void SoundButtonPressed()
-    {
-        if (soundMenu.activeSelf && !shopPanel.activeSelf)
-        {
-            soundMenu.SetActive(false);
-            Resume();
-        }
-        else if (soundMenu.activeSelf && shopPanel.activeSelf)
-        {
-            soundMenu.SetActive(false);
-        }
-        else
-        {
-            OpenSoundMenu();
-        }
-    }
+				if (isShopOpen)
+				{
+						CloseShop();
+				}
+				else
+				{
+						isShopOpen = true;
+						shopPanel.SetActive(true);
+				}
+		}
 
-    public void OpenSoundMenu()
-    {
-        soundMenu.SetActive(true);
-        PauseManager.PauseGame();
-    }
+		private void Update()
+		{
+				HandleShopPanelToggle();
+		}
 
-    public void Resume()
-    {
-        shopPanel.SetActive(false);
-        soundMenu.SetActive(false);
-        PauseManager.ResumeGame();
-        isShopOpen = false;
-    }
+		public void SoundButtonPressed()
+		{
+				if (soundMenu.activeSelf && !shopPanel.activeSelf)
+				{
+						soundMenu.SetActive(false);
+						Resume();
+				}
+				else if (soundMenu.activeSelf && shopPanel.activeSelf)
+				{
+						soundMenu.SetActive(false);
+				}
+				else
+				{
+						OpenSoundMenu();
+				}
+		}
 
-    public void LoadMenu()
-    {
-        StopAllCoroutines();
-        PauseManager.ResumeGame();
-        SceneManager.LoadScene("Menu");
-    }
+		public void OpenSoundMenu()
+		{
+				soundMenu.SetActive(true);
+				PauseManager.PauseGame();
+		}
 
-    void InitializeShop()
-    {
-        for (int i = 0; i < buyButtons.Length; i++)
-        {
-            int position = PlayerPrefs.GetInt("Position" + i, 0);
-            if (position == 1)
-            {
-                MarkAsBought(i);
-            }
-        }
+		public void Resume()
+		{
+				shopPanel.SetActive(false);
+				soundMenu.SetActive(false);
+				PauseManager.ResumeGame();
+				isShopOpen = false;
+		}
 
-        Check();
-    }
+		public void LoadMenu()
+		{
+				StopAllCoroutines();
+				PauseManager.ResumeGame();
+				SceneManager.LoadScene("Menu");
+		}
 
-    void HandleShopPanelToggle()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (isShopOpen)
-            {
-                CloseShop();
-            }
-            else if (!soundMenu.activeSelf)
-            {
-                OpenShop();
-            }
-        }
-    }
+		void InitializeShop()
+		{
+				for (int i = 0; i < buyButtons.Length; i++)
+				{
+						int position = PlayerPrefs.GetInt("Position" + i, 0);
+						if (position == 1)
+						{
+								MarkAsBought(i);
+						}
+				}
 
-    void Check()
-    {
-        for (int i = 0; i < buyButtons.Length; i++)
-        {
-            if (PlayerPrefs.GetInt("Position" + i) == 1)
-            {
-                SetButtonState(i, false, "Bought");
-            }
-            else if (Player.Instance.currentMoney < prices[i])
-            {
-                SetButtonState(i, false, "NotEnoughCoins");
-            }
-            else
-            {
-                SetButtonState(i, true, "Buy");
-            }
-        }
-    }
+				Check();
+		}
 
-    async void SetButtonState(int index, bool interactable, string key)
-    {
-        buyButtons[index].interactable = interactable;
-        var op = LocalizationSettings.StringDatabase.GetLocalizedStringAsync("UI", key);
-        boughtTexts[index].text = await op.Task;
-    }
+		void HandleShopPanelToggle()
+		{
+				if (Input.GetKeyDown(KeyCode.Escape))
+				{
+						if (isShopOpen)
+						{
+								CloseShop();
+						}
+						else if (!soundMenu.activeSelf)
+						{
+								OpenShop();
+						}
+				}
+		}
 
-    public void Buy(int index)
-    {
-        if (Player.Instance.currentMoney >= prices[index])
-        {
-            MarkAsBought(index);
-            Player.Instance.AddMoney(-prices[index]);
-            
-            if (succesBuyClip != null)
-            {
-                SoundManager.Instance.PlayerSound(succesBuyClip);
-            }
-            
-            Check();
-        }
-    }
+		void Check()
+		{
+				for (int i = 0; i < buyButtons.Length; i++)
+				{
+						if (PlayerPrefs.GetInt("Position" + i) == 1)
+						{
+								SetButtonState(i, false, "Bought");
+						}
+						else if (Player.Instance.currentMoney < prices[i])
+						{
+								SetButtonState(i, false, "NotEnoughCoins");
+						}
+						else
+						{
+								SetButtonState(i, true, "Buy");
+						}
+				}
+		}
 
-    void MarkAsBought(int index)
-    {
-        buyButtons[index].interactable = false;
-        PlayerPrefs.SetInt("Position" + index, 1);
-        PlayerPrefs.Save();
+		async void SetButtonState(int index, bool interactable, string key)
+		{
+				buyButtons[index].interactable = interactable;
+				var op = LocalizationSettings.StringDatabase.GetLocalizedStringAsync("UI", key);
+				boughtTexts[index].text = await op.Task;
+		}
 
-        if (index == 2 && buySeconPosition != null)
-        {
-            buySeconPosition.Invoke();
-        }
+		public void Buy(int index)
+		{
+				if (Player.Instance.currentMoney >= prices[index])
+				{
+						MarkAsBought(index);
+						Player.Instance.AddMoney(-prices[index]);
+						
+						if (succesBuyClip != null)
+						{
+								SoundManager.Instance.PlayerSound(succesBuyClip);
+						}
+						
+						Check();
+				}
+		}
 
-        if (index == 4 && buySeconPosition != null)
+		void MarkAsBought(int index)
+		{
+				buyButtons[index].interactable = false;
+				PlayerPrefs.SetInt("Position" + index, 1);
+				PlayerPrefs.Save();
+
+				if (index == 2 && buySeconPosition != null)
+				{
+						buySeconPosition.Invoke();
+				}
+
+				if (index == 4 && buySeconPosition != null)
         {
             buySeconPosition.Invoke();
 
-            if (PlayerPrefs.GetInt("Position4") == 1)
+             if (PlayerPrefs.GetInt("Position4") == 1 && Player.Instance.droneInstance != null)
             {
                 Player.Instance.droneInstance.SetActive(true);
                 DroneMovement droneMovement = Player.Instance.droneInstance.GetComponent<DroneMovement>();
@@ -214,23 +211,25 @@ public class Shop : MonoBehaviour
                 }
             }
         }
-    }
 
-    [ContextMenu("Reset Shop Data")]
-    void DeleteShopData()
-    {
-        for (int i = 0; i < buyButtons.Length; i++)
-        {
-            PlayerPrefs.DeleteKey("Position" + i);
-        }
-        PlayerPrefs.Save();
-        Debug.Log("Shop data has been reset");
-    }
 
-    [ContextMenu("Delete All PlayerPrefs")]
-    void DeletePlayerPrefs()
-    {
-        PlayerPrefs.DeleteAll();
-        Debug.Log("All PlayerPrefs have been deleted");
-    }
+		}
+
+		[ContextMenu("Reset Shop Data")]
+		void DeleteShopData()
+		{
+				for (int i = 0; i < buyButtons.Length; i++)
+				{
+						PlayerPrefs.DeleteKey("Position" + i);
+				}
+				PlayerPrefs.Save();
+				Debug.Log("Shop data has been reset");
+		}
+
+		[ContextMenu("Delete All PlayerPrefs")]
+		void DeletePlayerPrefs()
+		{
+				PlayerPrefs.DeleteAll();
+				Debug.Log("All PlayerPrefs have been deleted");
+		}
 }

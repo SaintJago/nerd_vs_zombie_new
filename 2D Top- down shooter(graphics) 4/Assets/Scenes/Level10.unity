@@ -2662,6 +2662,7 @@ MonoBehaviour:
   soundButton: {fileID: 1301934232}
   soundMenu: {fileID: 491959020}
   player: {fileID: 1468479170}
+  dronePrefab: {fileID: 1497218509832880030, guid: aa78dad85548f7c488ad93f5e8228df2, type: 3}
   popSound: {fileID: 8300000, guid: f0a445804593df94e81935f971d1c8ab, type: 3}
   succesBuyClip: {fileID: 8300000, guid: 6f9ef9c1e2a09c842acef5677f5eb14a, type: 3}
 --- !u!82 &204746686
@@ -5174,7 +5175,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.1672138}
   m_AnchorMax: {x: 1, y: 0.3104626}
-  m_AnchoredPosition: {x: -6250, y: -243.01498}
+  m_AnchoredPosition: {x: -6250, y: -243.01497}
   m_SizeDelta: {x: 317.19, y: 105.51001}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &325572186
@@ -10315,7 +10316,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.1672138}
   m_AnchorMax: {x: 1, y: 0.3104626}
-  m_AnchoredPosition: {x: -4287.086, y: -241.70493}
+  m_AnchoredPosition: {x: -4287.086, y: -241.70491}
   m_SizeDelta: {x: 317.19, y: 105.51001}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &626680565
@@ -12710,7 +12711,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.1672138}
   m_AnchorMax: {x: 1, y: 0.3104626}
-  m_AnchoredPosition: {x: -8211.641, y: -241.70493}
+  m_AnchoredPosition: {x: -8211.641, y: -241.70491}
   m_SizeDelta: {x: 317.19, y: 105.51001}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &727878502
@@ -25767,7 +25768,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.1672138}
   m_AnchorMax: {x: 1, y: 0.3104626}
-  m_AnchoredPosition: {x: -7224, y: -240.4249}
+  m_AnchoredPosition: {x: -7224, y: -240.42488}
   m_SizeDelta: {x: 317.19, y: 105.51001}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1301073387
@@ -44542,7 +44543,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.1672138}
   m_AnchorMax: {x: 1, y: 0.3104626}
-  m_AnchoredPosition: {x: -5273, y: -241.70493}
+  m_AnchoredPosition: {x: -5273, y: -241.70491}
   m_SizeDelta: {x: 317.19, y: 105.51001}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &2011690754

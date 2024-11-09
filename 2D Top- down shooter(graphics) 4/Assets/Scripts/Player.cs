@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
     [SerializeField] ParticleSystem footParticle;
     [SerializeField] GameObject deathPanel;
     [SerializeField] GameObject dronePrefab;
-    public GameObject droneInstance { get; private set; }
+    public GameObject droneInstance { get; set; }
     bool canBeDamaged = true;
     [SerializeField] AudioClip heartClip, deathClip, dashSound;
     [SerializeField] AudioClip[] footClips;
