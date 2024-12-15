@@ -921,7 +921,7 @@ MonoBehaviour:
   waves:
   - enemies:
     - {fileID: 4399811216482605671, guid: 5f6c3f222f621224ab7d68415b27f53a, type: 3}
-    enemyCount: 6
+    enemyCount: 1
     timeBtwSpawn: 1
     timeBtwBossSpawn: 0
     bossWave:

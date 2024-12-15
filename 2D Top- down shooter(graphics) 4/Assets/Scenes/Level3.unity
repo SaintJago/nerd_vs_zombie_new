@@ -920,7 +920,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - enemies:
-    - {fileID: 141417257370439316, guid: 02ab20267cf8ff8439a8b84061f4c146, type: 3}
+    - {fileID: 4399811216482605671, guid: 5f6c3f222f621224ab7d68415b27f53a, type: 3}
     enemyCount: 1
     timeBtwSpawn: 0
     timeBtwBossSpawn: 0
