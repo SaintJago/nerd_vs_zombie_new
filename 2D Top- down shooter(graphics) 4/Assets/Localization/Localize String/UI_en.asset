@@ -261,6 +261,10 @@ MonoBehaviour:
       (http://scripts.sil.org/OFL)\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n"
     m_Metadata:
       m_Items: []
+  - m_Id: 124962122986283008
+    m_Localized: Reset progress
+    m_Metadata:
+      m_Items: []
   references:
     version: 1
     00000000:

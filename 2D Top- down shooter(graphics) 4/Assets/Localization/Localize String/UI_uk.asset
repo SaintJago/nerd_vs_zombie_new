@@ -501,6 +501,10 @@ MonoBehaviour:
       org/OFL)\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n"
     m_Metadata:
       m_Items: []
+  - m_Id: 124962122986283008
+    m_Localized: "\u0421\u043A\u0438\u043D\u0443\u0442\u0438 \u043F\u0440\u043E\u0433\u0440\u0435\u0441"
+    m_Metadata:
+      m_Items: []
   references:
     version: 1
     00000000:

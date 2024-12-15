@@ -159,6 +159,10 @@ MonoBehaviour:
     m_Key: title
     m_Metadata:
       m_Items: []
+  - m_Id: 124962122986283008
+    m_Key: reset_progress
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
