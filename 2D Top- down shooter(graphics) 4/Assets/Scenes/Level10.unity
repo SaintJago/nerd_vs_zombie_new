@@ -2021,7 +2021,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - enemies:
-    - {fileID: 141417257370439316, guid: 02ab20267cf8ff8439a8b84061f4c146, type: 3}
+    - {fileID: 4399811216482605671, guid: 5f6c3f222f621224ab7d68415b27f53a, type: 3}
     enemyCount: 1
     timeBtwSpawn: 1
     timeBtwBossSpawn: 0
@@ -20953,7 +20953,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27d813d640671d942bb3c45cebae6310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadePanel: {fileID: 0}
+  fadePanel: {fileID: 853312037}
   fadeDuration: 1
 --- !u!1 &1067811701
 GameObject:

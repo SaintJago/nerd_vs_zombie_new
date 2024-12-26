@@ -46,7 +46,6 @@ public class LevelSelectionMenuManager : MonoBehaviour
         {
             elapsedTime += Time.deltaTime;
             fadePanel.alpha = Mathf.Clamp01(elapsedTime / fadeDuration);
-            Debug.Log($"Fade Alpha: {fadePanel.alpha}");
             yield return null;
         }
 
